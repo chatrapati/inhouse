@@ -1,0 +1,92 @@
+#nabarBox{
+    margin-top: 15px;
+    margin-bottom:  1.5rem;
+}
+.inputbox{
+    margin-bottom: 1rem;
+}
+.itembox a{
+    text-decoration: none !important;
+    color:#ffffff;
+}
+.hero1 .card{
+    padding-top: 40px;
+}
+.btntheme{
+    padding: 7.5px 40px !important;
+    background: #eb8035 !important;
+    color:#ffffff !important;
+    border:1px solid #eb8035 !important; 
+    margin-left: 1rem;
+    display: inline-block;
+    font-weight: 600;
+  }
+  .inputbox .form-control{
+    /* margin-top: 7px; */
+  }
+.inputbox select{
+    border: 1px solid #f58736 !important;
+    box-shadow: 0 0 10px #f58736;
+}
+.table{
+    border: 1.5px solid #f58736 !important;
+    /* box-shadow: 0 0 10px #f58736; */
+}
+.table th{
+    border: 1.5px solid #f58736 !important;
+}
+.table td{
+    border: 1.5px solid #cc834f !important;
+}
+
+
+  
+
+  .formgroup {
+    display: block;
+    margin-bottom: -11px
+  }
+  
+  .formgroup input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .formgroup label {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .formgroup label:before {
+    content:'';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #f58736;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .formgroup input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid #f58736;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .btncenter{
+    margin: auto;
+  }

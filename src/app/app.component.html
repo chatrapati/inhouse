@@ -1,0 +1,90 @@
+
+ <!-- <app-header></app-header> -->
+<!-- <app-admindashboard></app-admindashboard>  -->
+<!-- <app-footer></app-footer> -->
+<!-- 
+<app-login>
+
+</app-login>  -->
+
+<div id="wrapper" [ngClass]="{'toggled' : toggle }">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav" style="margin-left:0;">
+      <li class="sidebar-brand" id="sidbarLogo">
+        <a href="javascript:void(0);">
+          <img src="../../../assets/images/gstlogo_admin.png" alt="gst logo" class="adminlogo" />
+        </a>
+
+      </li>
+      <li class="sidebar-brand" id="sidebarTogglebtn">
+        <a href="#menu-toggle" id="menu-toggle" (click)="toggle = !toggle" style="margin-top:10px;float:right;">
+          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true"></i>
+        </a>
+
+      </li>
+      <li data-toggle="collapse" data-target="#products" class="collapsed active" (click)="menutoggle = !menutoggle">
+        <a href="#">
+          <i class="fa fa-sort-alpha-asc " aria-hidden="true" (click)="toggle = !toggle"> </i>
+          <span style="margin-left:10px;">User Management
+          </span>
+        </a>
+        <ul class="sub-menu collapse" id="products" [ngClass]="{'hide' : menutoggle }">
+          <li class="active">
+            <a href="#">User Dashboard</a>
+          </li>
+          <li>
+            <a href="#">User Creation</a>
+          </li>
+          <li>
+            <a href="#">Departments</a>
+          </li>
+          <li>
+            <a href="#">Roles</a>
+          </li>
+        </ul>
+
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-play-circle-o " aria-hidden="true"> </i>
+          <span style="margin-left:10px;">HR Management
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-puzzle-piece" aria-hidden="true"> </i>
+          <span style="margin-left:10px;">Project Management
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-font" aria-hidden="true"> </i>
+          <span style="margin-left:10px;">Eevent Management</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-info-circle " aria-hidden="true"> </i>
+          <span style="margin-left:10px;">Reports
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <app-header></app-header>
+    
+  <!-- <app-admindashboard></app-admindashboard>  -->
+   <!-- <app-usercreation></app-usercreation> -->
+   <!-- <app-departments></app-departments> -->
+   <!-- <app-roles></app-roles> -->
+   <!-- <app-hrmanagement></app-hrmanagement> -->
+   <router-outlet></router-outlet>
+</div>
+
