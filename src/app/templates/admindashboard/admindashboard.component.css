@@ -132,6 +132,9 @@
     #wrapper.toggled i {
         float: right;
     }
+    #wrapper.toggled #userIcon i {
+        float: inherit !important;
+    }
     #page-content-wrapper {
         padding: 20px;
         position: relative;
@@ -174,6 +177,12 @@
     }
     #wrapper.toggled i {
         float: right;
+    }
+    #wrapper.toggled #userIcon i {
+        float: inherit !important;
+    }
+    #userIcon i {
+        float: inherit !important;
     }
     #wrapper i {
         float: right;
