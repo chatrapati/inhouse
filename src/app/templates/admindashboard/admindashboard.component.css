@@ -392,7 +392,7 @@
 }
 
 .itembox a:hover .hero1 {
-    width: 100%;
+    width: 90%;
     height: 250px;
     margin: auto;
     /* background-color: orange; */
@@ -589,5 +589,8 @@
 height:60px;
 }
 .hero1 .card-body{
-padding:.5rem !important;
+    padding-top: 2.3rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
 }
