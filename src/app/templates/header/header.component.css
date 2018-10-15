@@ -1,0 +1,12 @@
+#adminHeader{
+    padding-left: 10px;
+}
+.adminheader{
+    height: 70px;
+    margin-top: -21px;
+    border-bottom: 2px solid #f89e45;
+}
+.adminlogo{
+    margin-left: 32px;
+}
+

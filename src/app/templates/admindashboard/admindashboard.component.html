@@ -1,0 +1,257 @@
+<div id="wrapper" [ngClass]="{'toggled' : toggle }">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav" style="margin-left:0;">
+      <li class="sidebar-brand" id="sidbarLogo">
+        <a href="javascript:void(0);">
+          <img src="../../../assets/images/gstlogo_admin.png" alt="gst logo" class="adminlogo" />
+        </a>
+
+      </li>
+      <li class="sidebar-brand" id="sidebarTogglebtn">
+        <a href="#menu-toggle" id="menu-toggle" (click)="toggle = !toggle" style="margin-top:10px;float:right;">
+          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true"></i>
+        </a>
+
+      </li>
+      <li data-toggle="collapse" data-target="#products" class="collapsed active" (click)="menutoggle = !menutoggle">
+        <a href="#">
+          <i class="fa fa-sort-alpha-asc " aria-hidden="true" (click)="toggle = !toggle"> </i>
+          <span style="margin-left:10px;">User Management
+          </span>
+        </a>
+        <ul class="sub-menu collapse" id="products" [ngClass]="{'hide' : menutoggle }">
+          <li class="active">
+            <a href="#">User Dashboard</a>
+          </li>
+          <li>
+            <a href="#">User Creation</a>
+          </li>
+          <li>
+            <a href="#">Departments</a>
+          </li>
+          <li>
+            <a href="#">Roles</a>
+          </li>
+        </ul>
+
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-play-circle-o " aria-hidden="true"> </i>
+          <span style="margin-left:10px;">HR Management
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-puzzle-piece" aria-hidden="true"> </i>
+          <span style="margin-left:10px;">Project Management
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-font" aria-hidden="true"> </i>
+          <span style="margin-left:10px;">Eevent Management</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-info-circle " aria-hidden="true"> </i>
+          <span style="margin-left:10px;">Reports
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <app-header></app-header>
+    <div class="container-fluid">
+      <div class="row" id="nabarBox" style="margin-top:15px; margin-bottom: 15px;">
+        <div class="col-3 itembox">
+          <a href="#">
+            <div class="hero1">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title text-md-center">Total number of Employees</h4>
+                  <div class="userlink">
+                    <a href="#">
+                      <!-- <i class="fa fa-user fa-4x"></i> -->
+                      <img src="../../../assets/images/employee.png" alt="employee">
+                    </a>
+                  </div>
+                  <div class="itemcount userlink">
+                    <a class="btn btn-default btn-circle btn-lg " href="#">60</a>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="hero2"></div>
+          </a>
+
+        </div>
+        <div class="col-3 itembox">
+          <a href="#">
+            <div class="hero1">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title text-md-center">Hiring</h4>
+                  <div class="userlink">
+                    <a href="#">
+                      <img src="../../../assets/images/hiring_icon.png" alt="hiring_icon">
+                    </a>
+                  </div>
+                  <div class="itemcount userlink">
+                    <a class="btn btn-default btn-circle btn-lg " href="#">60</a>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="hero2"></div>
+          </a>
+
+        </div>
+        <div class="col-3 itembox">
+          <a href="#">
+            <div class="hero1">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title text-md-center">Reliving</h4>
+                  <div class="userlink">
+                    <a href="#">
+                      <img src="../../../assets/images/reliving_icon.png" alt="reliving_icon">
+                    </a>
+                  </div>
+                  <div class="itemcount userlink">
+                    <a class="btn btn-default btn-circle btn-lg " href="#">60</a>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="hero2"></div>
+          </a>
+
+        </div>
+        <div class="col-3 itembox">
+          <a href="#">
+            <div class="hero1">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title text-md-center">Fired</h4>
+                  <div class="userlink">
+                    <a href="#">
+                      <img src="../../../assets/images/fired_icon.png" alt="fired_icon">
+                    </a>
+                  </div>
+                  <div class="itemcount userlink">
+                    <a class="btn btn-default btn-circle btn-lg " href="#">60</a>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="hero2"></div>
+          </a>
+
+        </div>
+      </div>
+      <div class="row">
+        <!-- <div class="col-5"> -->
+        <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="true" [colors]="colors"
+          class="col-5" (chartClick)="onChartClick($event)">
+        </canvas>
+        <!-- </div> -->
+        <div class="col-5">
+          <!-- <div>
+            <form [formGroup]='dateForm'>
+              <input type="text" placeholder="Start Date" formControlName="dateFrom" name="dateFrom" />
+              <input type="text" placeholder="End Date" formControlName="dateTo" name="dateTo" />
+              <button class="primary">Reserve</button>
+            </form>
+          </div> -->
+          <div class="col-12 " id="calendar-container" style="text-align: center">
+            <div>
+              <i class="fa fa-chevron-left" (click)="prevMonth()" style="float: left; cursor: pointer;"></i>
+              {{date.format('MMMM')}} {{date.format('YYYY')}}
+              <i class="fa fa-chevron-right" (click)="nextMonth()" style="float: right; cursor: pointer;"></i>
+            </div>
+          </div>
+          <div id="calendar-container" class="col-12" style="text-align: center">
+            <div class="row m-0">
+              <div class="p-2 calendar-week-days bd-highlight">SU</div>
+              <div class="p-2 calendar-week-days bd-highlight">MO</div>
+              <div class="p-2 calendar-week-days bd-highlight">TU</div>
+              <div class="p-2 calendar-week-days bd-highlight">WE</div>
+              <div class="p-2 calendar-week-days bd-highlight">TH</div>
+              <div class="p-2 calendar-week-days bd-highlight">FR</div>
+              <div class="p-2 calendar-week-days bd-highlight">SA</div>
+            </div>
+            <div class="row m-0">
+              <div class="p-2 calendar-days bd-highlight " *ngFor="let day of daysArr" (click)="selectedDate(day)" [ngClass]="{'inactive':!day, 'today':todayCheck(day)}">{{day?.date()}}</div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-2">
+          <ul>
+            <li class="event-hire-bullet">
+              <span class="event-head">Hiring</span>
+              <span class="label label-default badge event-hire-headBatch">5</span>
+            </li>
+            <p class="m-0">
+              <a class="event-hire" href="javascript.void(0)">test</a>
+            </p>
+            <p class="m-0">
+              <a class="event-hire" href="javascript.void(0)">test</a>
+            </p>
+            <p class="m-0">
+              <a class="event-hire" href="javascript.void(0)">test</a>
+            </p>
+            <p class="m-0">
+              <a class="event-hire" href="javascript.void(0)">test</a>
+            </p>
+            <p class="m-0">
+              <a class="event-hire" href="javascript.void(0)">test</a>
+            </p>
+            <li class="event-relieve-bullet">
+              <span class="event-head">Relieving</span>
+              <span class="label label-default badge event-relieve-headBatch">3</span>
+            </li>
+            <p class="m-0">
+              <a class="event-relieve" href="javascript.void(0)">test</a>
+            </p>
+            <p class="m-0">
+              <a class="event-relieve" href="javascript.void(0)">test</a>
+            </p>
+            <p class="m-0">
+              <a class="event-relieve" href="javascript.void(0)">test</a>
+            </p>
+            <li class="event-fire-bullet">
+              <span class="event-head">Fired</span>
+              <span class="label label-default badge event-fire-headBatch">2</span>
+            </li>
+            <p class="m-0">
+              <a class="event-fire" href="javascript.void(0)">test</a>
+            </p>
+            <p class="m-0">
+              <a class="event-fire" href="javascript.void(0)">test</a>
+            </p>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
