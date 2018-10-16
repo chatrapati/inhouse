@@ -16,7 +16,7 @@ body {
     /* background-image: url(../images/admin_bg.png);
     background-repeat: no-repeat;
     background-size: cover;  */
-    overflow-x:hidden ;
+    overflow-x: hidden;
 }
 
 .adminlogo{
@@ -145,8 +145,12 @@ color: #135679 !important;
 .dbitem .card{
 border-radius: 0 !important;
 }
+/* .adminwrapper{
+    background-image: url(../../../assets/images/admin_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover; 
+} */
 
-/* admin */
 #wrapper {
   padding-left: 0;
   -webkit-transition: all 0.6s ease;
@@ -275,12 +279,6 @@ border-radius: 0 !important;
   #wrapper.toggled i {
       float: right;
   }
-  #wrapper.toggled #userIcon i {
-    float: inherit !important;
-}
-#wrapper.toggled #dropDown .fa-chevron-down{
-  float: inherit !important;
-}
   #page-content-wrapper {
       padding: 20px;
       position: relative;
@@ -324,18 +322,6 @@ border-radius: 0 !important;
   #wrapper.toggled i {
       float: right;
   }
-  #wrapper.toggled #userIcon i {
-    float: inherit !important;
-}
-#wrapper.toggled #dropDown .fa-chevron-down{
-  float: inherit !important;
-}
-#userIcon i {
-  float: inherit !important;
-}
-#dropDown .fa-chevron-down{
-  float: inherit !important;
-}
   #wrapper i {
       float: right;
   }
@@ -552,10 +538,72 @@ border-radius: 0 !important;
   margin-top: 10px;
 }
 
-/* ends admin */
+.itembox a:hover .hero1 {
+  width: 90%;
+  height: 250px;
+  margin: auto;
+  background-color: orange;
+}
 
-@media screen and (max-width:768px) { 
-  body{
-    display:none;
-  }
- }
+.itembox a:hover .hero2 {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  margin: auto;
+  border-width: 17px 14px 0 14px;
+  border-color: orange transparent transparent transparent;
+  line-height: 0;
+}
+
+/* .itembox a:hover .userlink
+{
+  padding-left: 8em;
+  padding-right: 8rem;
+} */
+
+#nabarBox {
+  background: #f58736;
+  margin-left: -3px;
+  margin-top: 10px;
+  height: 250px;
+}
+
+.itembox .card {
+  background: transparent !important;
+  border: none !important;
+}
+
+.itembox a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.userlink {
+  /* padding-left: 8em;
+  padding-right: 8rem; */
+  text-align: center;
+}
+
+.userlink {
+  margin-bottom: 20px;
+}
+
+.itemcount .btn {
+  background-color: #862525;
+  border: 3px solid #ffffff !important;
+  border-radius: 18px;
+  box-shadow: 0 0 0 4px #862525;
+  height: 50px;
+  width: 50px;
+  line-height: 1.8 !important;
+}
+
+.itembox .card-title {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: 1.3rem !important;
+}
+
+#nabarBox i {
+  float: inherit !important;
+}
