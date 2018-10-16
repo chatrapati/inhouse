@@ -120,3 +120,7 @@
   border-top:0 !important;
   border-right:0 !important;
 }
+
+#pan{
+  text-transform:uppercase;
+}

@@ -1,239 +1,357 @@
-<div id="wrapper" [ngClass]="{'toggled' : toggle }">
-  <!-- Sidebar -->
-  <div id="sidebar-wrapper">
-    <ul class="sidebar-nav" style="margin-left:0;">
-      <li class="sidebar-brand" id="sidbarLogo">
-        <a href="javascript:void(0);"><img src="../../../assets/images/gstlogo_admin.png" alt="gst logo" class="adminlogo" />
-        </a>
-
-      </li>
-      <li class="sidebar-brand" id="sidebarTogglebtn">
-        <a href="javascript:void(0);" id="menu-toggle" (click)="toggle = !toggle" style="margin-top:10px;float:right;">
-          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true"></i></a>
-
-      </li>
-      <li data-toggle="collapse" data-target="#products" class="collapsed active" (click)="menutoggle = !menutoggle">
-        <a href="#"><i class="fa fa-sort-alpha-asc " aria-hidden="true" (click)="toggle = !toggle"> </i> <span style="margin-left:10px;">User
-            Management</span> </a>
-        <ul class="sub-menu collapse" id="products" [ngClass]="{'hide' : menutoggle }">
-          <li class="active"><a href="#">User Dashboard</a></li>
-          <li><a href="#">User Creation</a></li>
-          <li><a href="#">Departments</a></li>
-          <li><a href="#">Roles</a></li>
-
-        </ul>
-
-      </li>
-      <li>
-        <a href="#"> <i class="fa fa-play-circle-o " aria-hidden="true"> </i> <span style="margin-left:10px;">HR
-            Management</span> </a>
-      </li>
-      <li>
-        <a href="#"> <i class="fa fa-puzzle-piece" aria-hidden="true"> </i> <span style="margin-left:10px;">Project
-            Management</span> </a>
-      </li>
-      <li>
-        <a href="#"> <i class="fa fa-font" aria-hidden="true"> </i> <span style="margin-left:10px;">Eevent Management</span>
-        </a>
-      </li>
-      <li>
-        <a href="#"><i class="fa fa-info-circle " aria-hidden="true"> </i> <span style="margin-left:10px;">Reports
-          </span> </a>
-      </li>
-    </ul>
+<div id='stages'>
+    <nav role='navigation' class="d-flex justify-content-center">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+          <a href="javascript:void(0)" (click)="setSelectTab('officeDetails')">Office Details</a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0)" (click)="setSelectTab('personalDetails')">Personal Details</a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0)" (click)="setSelectTab('documentDetails')">Document Details</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a href="javascript:void(0)">Other Details</a>
+        </li> -->
+      </ul>
+    </nav>
   </div>
-  <!-- /#sidebar-wrapper -->
-
-  <!-- Page Content -->
-  <div id="page-content-wrapper">
-    <app-header></app-header>
-    <div id='stages'>
-      <nav role='navigation' class="d-flex justify-content-center">
-        <ul>
-          <li><a href="#">Office Details</a></li>
-          <li><a href="#">Perosnal Details</a></li>
-          <li><a href="#">Document Details</a></li>
-          <li><a href="#">Other Details</a></li>
-        </ul>
-      </nav>
+  
+  <div class="tab-content" >
+    <div *ngIf="officeDetails">
+      <div>
+        <form #parta="ngForm">
+          <div class="row inputbox">
+            <div class="col-4">
+              <div class="form-group">
+                <label for="empId" class="control-label">Employee ID</label>
+                <input type="text" id="empId" name="empId" class="form-control" [(ngModel)]="user['empId']" placeholder="Employee ID" value=""
+                  #empId="ngModel" required>
+                <div *ngIf="empId.invalid && (empId.dirty || empId.touched)" class="alert alert-danger">
+                  Enter Employee ID
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="empName" class="control-label">Employee Name</label>
+                <input type="text" id="empName" name="empName" class="form-control" [(ngModel)]="user['empName']" placeholder="Employee Name"
+                  value="" #empName="ngModel" required>
+                <div *ngIf="empName.invalid && (empName.dirty || empName.touched)" class="alert alert-danger">
+                  Enter Employee Name
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="surname" class="control-label">Employee Surname</label>
+                <input type="text" id=surname name="surname" class="form-control" [(ngModel)]="user['surname']" placeholder="Employee Surname"
+                  value="" #surname="ngModel" required>
+                <div *ngIf="surname.invalid && (surname.dirty || surname.touched)" class="alert alert-danger">
+                  Enter Employee Surname
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <label for="gender" class="control-label">Gender</label>
+                <select class="form-control gendercontrol" name="gender" id="gender" [(ngModel)]="user['gender']" #gender="ngModel" required>
+                  <option [ngValue]="undefined" disabled selected>Select</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+                <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="alert alert-danger">
+                  Select Gender
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="dob" class="control-label">Date of Birth(as per records)</label>
+                <input type="date" id="dob" name="dob" class="form-control" [(ngModel)]="user['dob']" placeholder="Date of Birth" value=""
+                  #dob="ngModel" required>
+                <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="alert alert-danger">
+                  Enter Date of Birth
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="birthDate" class="control-label">Birth Date(Actual Date)</label>
+                <input type="date" id="birthDate" name="birthDate" class="form-control" [(ngModel)]="user['birthDate']" placeholder="Birth Date"
+                  value="" #birthDate="ngModel" required>
+                  <span class="float-md-left">
+                      <label class="checkbox chbklabel">
+                        <input type="checkbox" name="isChecked" [(ngModel)]="isCheckedBirth" (change)="setActualDOB(isCheckedBirth?'true':'false')">
+                       <span class="remtext">same as Date of Birth</span> 
+                      </label>
+                    </span>
+                <div *ngIf="birthDate.invalid && (birthDate.dirty || birthDate.touched)" class="alert alert-danger">
+                  Enter Birth Date
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="martialStatus" class="control-label">Martial status</label>
+                <select class="form-control gendercontrol" name="martialStatus" id="martialStatus" [(ngModel)]="user['martialStatus']" #martialStatus="ngModel"
+                  required>
+                  <option [ngValue]="undefined" disabled selected>Select</option>
+                  <option value="Single">Single</option>
+                  <option value="Married">Married</option>
+                  <option value="Seperated">Seperated</option>
+                  <option value="Divorced">Divorced</option>
+                  <option value="Widowed">Widowed</option>
+                </select>
+                <div *ngIf="martialStatus.invalid && (martialStatus.dirty || martialStatus.touched)" class="alert alert-danger">
+                  Select Martial Status
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <label for="qualification" class="control-label">Qualification</label>
+                <input type="text" id="qualification" name="qualification" class="form-control" [(ngModel)]="user['qualification']" placeholder="Qualification"
+                  value="" #qualification="ngModel" required>
+                <div *ngIf="qualification.invalid && (qualification.dirty || qualification.touched)" class="alert alert-danger">
+                  Enter Qualification
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <label for="presentAddress" class="control-label">Present Address</label>
+                <input type="text" id="presentAddress" name="presentAddress" class="form-control" [(ngModel)]="user['presentAddress']" placeholder="Present Address"
+                  value="" #presentAddress="ngModel" required>
+                <div *ngIf="presentAddress.invalid && (presentAddress.dirty || presentAddress.touched)" class="alert alert-danger">
+                  Enter Present Address
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="permanentAddress" class="control-label">Permanent Address</label>
+                <input type="text" id="permanentAddress" name="permanentAddress" class="form-control" [(ngModel)]="user['permanentAddress']"
+                  placeholder="Permanent Address" value="" #permanentAddress="ngModel" required>
+                  <span class="float-md-left">
+                      <label class="checkbox chbklabel">
+                        <input type="checkbox" name="isChecked" [(ngModel)]="isChecked" (change)="setPermanantAddress(isChecked?'true':'false')">
+                       <span class="remtext">same as Present Address</span> 
+                      </label>
+                    </span>
+                <div *ngIf="permanentAddress.invalid && (permanentAddress.dirty || permanentAddress.touched)" class="alert alert-danger">
+                  Enter Permanent Address
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="contact" class="control-label">Contact</label>
+                <input type="text" id="contact" name="contact" class="form-control" minlength=10 maxlength=10  (keypress)="fieldValidate($event,'contact')" [(ngModel)]="user['contact']" placeholder="Contact" value=""
+                  #contact="ngModel" required>
+                <div *ngIf="contact.invalid && (contact.dirty || contact.touched || contact.errors.minlength)" class="alert alert-danger">
+                  Enter Contact Number
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="econtact" class="control-label">Emergency Contact</label>
+                <input type="text" id="econtact" name="econtact" class="form-control" minlength=10 maxlength=10 (keypress)="fieldValidate($event,'contact')" [(ngModel)]="user['econtact']" placeholder="Emergency Contact"
+                  value="" #econtact="ngModel" required>
+                <div *ngIf="econtact.invalid && (econtact.dirty || econtact.touched || econtact.errors.minlength)" class="alert alert-danger">
+                  Enter Emergency Contact
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="mail" class="control-label">Email id Personal</label>
+                <input type="text" id="mail" name="mail" class="form-control" [(ngModel)]="user['mail']" placeholder="Email-ID Personal"
+                  value="" #mail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+                <div *ngIf="mail.invalid && (mail.dirty || mail.touched || mail.errors.pattern)" class="alert alert-danger">
+                  Enter Personal Mail ID
+                </div>
+              </div>
+            </div>
+          </div>
+          <section>
+            <div class="d-inline mx-auto center">
+              <button  (click)="setSelectTab('personalDetails')" [disabled]="parta.invalid" href="javascript:void(0)" class="btn btn-default btntheme">Continue</button >
+              
+            </div>
+          </section>
+        </form>
+      </div>
+  
     </div>
-
-    <!-- tabs content -->
-    <!-- office details start -->
-    <div>
-      <div class="row inputbox">
-        <div class="col-4">
-          <div class="form-group">
-            <label for="name" class="control-label">Employee ID</label>
-            <input type="text" name="name" class="form-control" placeholder="Employee ID" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Employee Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Employee Name" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Full Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Full Name" value="">
+    <div *ngIf="personalDetails">
+      <div>
+        <form #partb="ngForm">
+          <div class="row inputbox">
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="dojGST" class="control-label">Date of Joining GST</label>
+                <input type="date" name="dojGST" id="dojGST" [(ngModel)]="user['dojGST']" class="form-control" placeholder="Date of Joining GST"
+                  value="" #dojGST="ngModel" required>
+                <div *ngIf="dojGST.invalid && (dojGST.dirty || dojGST.touched)" class="alert alert-danger">
+                  Enter Date of Joining GST
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="docGST" class="control-label">Date of Confirmation GST</label>
+                <input type="date" name="docGST" id="docGST" [(ngModel)]="user['docGST']" class="form-control" placeholder="Date of Confirmation GST"
+                  value="" #docGST="ngModel" required>
+                <div *ngIf="docGST.invalid && (docGST.dirty || docGST.touched)" class="alert alert-danger">
+                  Enter Date of Confirmation GST
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="designation" class="control-label">Designation</label>
+                <input type="text" name="designation" id="designation" [(ngModel)]="user['designation']" class="form-control" placeholder="Designation"
+                  value="" #designation="ngModel" required>
+                <div *ngIf="designation.invalid && (designation.dirty || designation.touched)" class="alert alert-danger">
+                  Enter Designation
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="department" class="control-label">Department</label>
+                <input type="text" name="department" id="department" [(ngModel)]="user['department']" class="form-control" placeholder="Department"
+                  value="" #department="ngModel" required>
+                <div *ngIf="department.invalid && (department.dirty || department.touched)" class="alert alert-danger">
+                  Enter Department
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <label for="emailOfficial" class="control-label">Email-ID Official</label>
+                <input type="text" name="emailOfficial" id="emailOfficial" [(ngModel)]="user['emailOfficial']" class="form-control" placeholder="Email-ID Official"
+                  value="" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #emailOfficial="ngModel" required>
+                <div *ngIf="emailOfficial.invalid && (emailOfficial.dirty || emailOfficial.touched || emailOfficial.errors.pattern)" class="alert alert-danger">
+                  Enter Official mailId
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="ctc" class="control-label">CTC</label>
+                <input type="text" name="ctc" id="ctc" [(ngModel)]="user['ctc']" class="form-control" placeholder="CTC" value="" #ctc="ngModel" minlength=4 maxlength=8  (keypress)="fieldValidate($event,'ctc')"
+                  required>
+                <div *ngIf="ctc.invalid && (ctc.dirty || ctc.touched || ctc.errors.minlength)" class="alert alert-danger">
+                  Enter CTC
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group ">
+                <label for="reportingManager" class="control-label">Reporting Manager</label>
+                <input type="text" name="reportingManager" id="reportingManager" [(ngModel)]="user['reportingManager']" class="form-control"
+                  placeholder="Reporting Manager" value="" #reportingManager="ngModel" required>
+                <div *ngIf="reportingManager.invalid && (reportingManager.dirty || reportingManager.touched)" class="alert alert-danger">
+                  Enter Reporting Manager
+                </div>
+              </div>
+            </div>
   
           </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group">
-            <label for="name" class="control-label">Gender</label>
-            <select class="form-control gendercontrol">
-               <option value="Male">Male</option>
-               <option value="Female">Female</option>
-            </select>
-          </div>
-        </div>
-        <!-- <div class="col-4">
-          <div class="form-group">
-            <label for="name" class="control-label">Gmail ID</label>
-            <input type="text" name="name" class="form-control" placeholder="Gemail ID" value="">
-          </div>
-        </div> -->
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Date of Joining GST</label>
-            <input type="text" name="name" class="form-control" placeholder="Date of Joining GST" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Boold Group</label>
-            <input type="text" name="name" class="form-control" placeholder="Boold Group" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Marital status</label>
-            <input type="text" name="name" class="form-control" placeholder="Marital status" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group">
-            <label for="name" class="control-label">Qualification</label>
-            <input type="text" name="name" class="form-control" placeholder="Qualification" value="">
-          </div>
-        </div>
+          <section>
+            <div class="d-inline mx-auto center">
+              <button  class="btn btn-default btntheme" (click)="setSelectTab('documentDetails')" [disabled]="partb.invalid" href="javascript:void(0)">Continue</button >
+              <button class="btn btn-default btntheme" (click)="setSelectTab('officeDetails')" href="javascript:void(0)">Cancel</button>
+            </div>
+          </section>
+        </form>
       </div>
-      <section>
-        <div class="d-inline mx-auto center">
-          <a class="btn btn-default btntheme" href="#">Continue</a>
-          <a class="btn btn-default btntheme" href="#">Cancel</a>
-        </div>
-      </section>
     </div>
-   <!-- ends office details -->
-
-     <!-- office details start -->
-     <div>
-      <div class="row inputbox">
-        <div class="col-4">
-          <div class="form-group">
-            <label for="name" class="control-label">Present Address</label>
-            <input type="text" name="name" class="form-control" placeholder="Present Address" value="">
+    <div *ngIf="documentDetails">
+      <div>
+          <form #partc="ngForm">
+        <div class="row inputbox">
+          <div class="col-4">
+            <div class="form-group ">
+              <label for="prevEmployement" class="control-label">Previous Employement</label>
+              <input type="text" name="prevEmployement" [(ngModel)]="user['prevEmployement']" class="form-control" placeholder="Previous Employement" value="">
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group ">
+              <label for="pan" class="control-label">Pancard</label>
+              <input type="text" name="pan" id="pan" [(ngModel)]="user['pan']" class="form-control" placeholder="Pancard" value="" minlength=10 maxlength=10 pattern="[A-Za-z]{5}\d{4}[A-Za-z]{1}" #pan="ngModel">
+              <div *ngIf="pan.invalid && (pan.dirty || pan.touched || pan.errors.pattern || pan.errors.minlength)" class="alert alert-danger">
+                  Enter valid PAN
+                </div>  
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group ">
+              <label for="aadhar" class="control-label">Aadhar Number</label>
+              <input type="text" name="aadhar" id="aadhar" [(ngModel)]="user['aadhar']" class="form-control" placeholder="Aadhar Number" value="" minlength=12 maxlength=12 pattern="^[0-9]{12}$" (keypress)="fieldValidate($event,'aadhar')" #aadhar="ngModel">
+              <div *ngIf="aadhar.invalid && (aadhar.dirty || aadhar.touched || aadhar.errors.pattern || aadhar.errors.minlength)" class="alert alert-danger">
+                  Enter valid AADHAR
+                </div> 
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group ">
+              <label for="bankName" class="control-label">Bank Name</label>
+              <input type="text" name="bankName" [(ngModel)]="user['bankName']" class="form-control" placeholder="Bank Name" value="">
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group ">
+              <label for="accountName" class="control-label">Account Holder Name</label>
+              <input type="text" name="accountName" [(ngModel)]="user['accountName']" class="form-control" placeholder="Account Holder Name" value="">
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group ">
+              <label for="accountNumber" class="control-label">Account Number</label>
+              <input type="number" name="accountNumber" [(ngModel)]="user['accountNumber']" class="form-control" placeholder="Account Number" value="">
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group ">
+              <label for="IFSC" class="control-label">IFSC code</label>
+              <input type="text" name="IFSC" [(ngModel)]="user['IFSC']" class="form-control" placeholder="IFSC code" value="">
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group ">
+              <label for="UAN" class="control-label">UAN (PF)</label>
+              <input type="text" name="UAN" id="UAN" [(ngModel)]="user['UAN']" class="form-control" placeholder="UAN (PF)" value="" minlength=12 maxlength=12 pattern="^[0-9]{12}$" (keypress)="fieldValidate($event,'aadhar')" #UAN="ngModel">
+              <div *ngIf="UAN.invalid && (UAN.dirty || UAN.touched || UAN.errors.pattern || UAN.errors.minlength)" class="alert alert-danger">
+                  Enter valid UAN
+                </div> 
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group ">
+              <label for="EPF" class="control-label">EPF Account Number</label>
+              <input type="text" name="EPF" id="epf" [(ngModel)]="user['EPF']" class="form-control" placeholder="EPF Account Number" value="">
+              
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group ">
+              <label for="reason" class="control-label">Reason for Leave</label>
+              <input type="text" name="reason" [(ngModel)]="user['reasonForLeave']" class="form-control" placeholder="Reason for Leave" value="">
+            </div>
           </div>
         </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Permanent Address</label>
-            <input type="text" name="name" class="form-control" placeholder="Permanent Address" value="">
+        <section>
+          <div class="d-inline mx-auto center">
+            <button  class="btn btn-default btntheme" href="javascript:void(0)" [disabled]="partc.invalid" (click)="finalresult()">Save</button >
+            <button class="btn btn-default btntheme" (click)="setSelectTab('personalDetails')" href="javascript:void(0)">Cancel</button>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Email id Personal</label>
-            <input type="text" name="name" class="form-control" placeholder="Email-ID Personal" value="">
-          </div>
-        </div>
-       
-        <div class="col-4">
-          <div class="form-group">
-            <label for="name" class="control-label">Email-ID Official</label>
-            <input type="text" name="name" class="form-control" placeholder="Email-ID Official" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Pancard</label>
-            <input type="text" name="name" class="form-control" placeholder="Pancard" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Adhar</label>
-            <input type="text" name="name" class="form-control" placeholder="Adhar" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Bank Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Bank Name" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Bank Account Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Bank Account Name" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Bank Account No</label>
-            <input type="number" name="name" class="form-control" placeholder="Bank Account No" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Team Lead Representation</label>
-            <input type="text" name="name" class="form-control" placeholder="Team Lead Representation" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">UAN NO</label>
-            <input type="text" name="name" class="form-control" placeholder="UAN NO" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Last Working Day</label>
-            <input type="text" name="name" class="form-control" placeholder="Last Working Day" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Reason for Leave</label>
-            <input type="text" name="name" class="form-control" placeholder="Reason for Leave" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Full & Final Settilement</label>
-            <input type="text" name="name" class="form-control" placeholder="Full & Final Settilement" value="">
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-group ">
-            <label for="name" class="control-label">Remarks</label>
-            <input type="text" name="name" class="form-control" placeholder="Remarks" value="">
-          </div>
-        </div>
+        </section>
+      </form>
       </div>
-      <section>
-        <div class="d-inline mx-auto center">
-          <a class="btn btn-default btntheme" href="#">Continue</a>
-          <a class="btn btn-default btntheme" href="#">Cancel</a>
-        </div>
-      </section>
     </div>
-   <!-- ends office details -->
-
-    <!-- /tabs end content  -->
   </div>
-</div>

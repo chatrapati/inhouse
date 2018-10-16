@@ -24,11 +24,11 @@ hgffhhfhgf
         <form class="form-signin">
           <div class="input-container">
             <i class="fa fa-envelope icon"></i>
-            <input type="text" class="form-control mb-4" placeholder="Email" required autofocus>
+            <input type="text" class="form-control mb-4" placeholder="Email" [(ngModel)]="credentials['email']" name="email" required autofocus>
           </div>
           <div class="input-container">
             <i class="fa fa-lock icon pswicon"></i>
-            <input type="text" class="form-control mb-4" placeholder="Password" required autofocus>
+            <input type="password" class="form-control mb-4" placeholder="Password" [(ngModel)]="credentials['password']" name="password" required autofocus>
           </div>
           <div class="row forgotdiv">
             <div class="col-md-6 text-center">
@@ -46,7 +46,7 @@ hgffhhfhgf
           <div class="row forgotdiv">
               <div class="col-md-12 text-center">
                 <span class="">
-                    <button type="button" class="btn btn-outline-dark btn-sm logbtn">Login</button>
+                    <button type="button" class="btn btn-outline-dark btn-sm logbtn" (click)="login()">Login</button>
                 </span>
               </div>
               <!-- <div class="col-md-6 text-center">

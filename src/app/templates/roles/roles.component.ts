@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { FormBuilder, FormGroup, RequiredValidator, Validators } from '@angular/forms';
-import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-admindashboard',
-  templateUrl: './admindashboard.component.html',
-  styleUrls: ['./admindashboard.component.css']
+  selector: 'app-roles',
+  templateUrl: './roles.component.html',
+  styleUrls: ['./roles.component.css']
 })
-export class AdmindashboardComponent implements OnInit {
+export class RolesComponent implements OnInit {
 
-  isEmployeeList: boolean =false;
   public date = moment();
 
   public daysArr;
@@ -21,20 +19,19 @@ export class AdmindashboardComponent implements OnInit {
     responsive: true    // THIS WILL MAKE THE CHART RESPONSIVE (VISIBLE IN ANY DEVICE).
   }
 
-  labels = ['Total Employees', 'Hiring', 'Relieving', 'Fired'];
+  labels = ['Project Manager', 'Team Lead', 'UI Developer', 'UIX Designer', 'Python Developer', 'Android Developer', 'IOS Developer', '.Net Developer'];
 
   // STATIC DATA FOR THE CHART IN JSON FORMAT.
   chartData = [
     {
-      label: '1st Year',
-      data: [60, 5, 3, 2]
+      label: 'Roles',
+      data: [25, 35, 60, 18, 25, 85, 70, 50]
     }
-
   ];
 
   // CHART COLOR.
   colors = [
-    { // 1st Year.
+    { 
       backgroundColor: '#f58736'
     }
   ]
@@ -45,7 +42,7 @@ export class AdmindashboardComponent implements OnInit {
   }
 
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder) {
     this.initDateForm()
   }
 
@@ -117,8 +114,5 @@ export class AdmindashboardComponent implements OnInit {
     return days
   }
 
-  employeesList(){
-   this.router.navigateByUrl('/employeeList'); 
-  }
 
 }
