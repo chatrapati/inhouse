@@ -13,6 +13,8 @@
     margin-right: 3px;
     padding-top: 20px;
     margin-bottom: 20px;
+ 
+    
   }
   
   #stages ul, li {
@@ -23,13 +25,13 @@
   #stages li {
     display: inline-block;
     position: relative;
-    margin:0 .5em ;
+    margin: 0 1.5em;
   }
   
   #stages a {
     display: block;
-    height:2em;
-    line-height:2em;
+    height:3em;
+    line-height:3em;
     text-decoration: none;
     background-color: #eb8035;
     color:#ffffff;
@@ -48,13 +50,13 @@
   
   #stages li:after {
     left:100%;
-    border: 1.13em solid transparent;
+    border: 1.70em solid transparent;
     border-left-color:#eb8035;
   }
   
   #stages li:before {
     right:calc(100% - 1em);
-    border: 1.13em solid #eb8035;
+    border: 1.70em solid #eb8035;
     border-left-color:transparent;
   }
   
@@ -123,4 +125,7 @@
 
 #pan{
   text-transform:uppercase;
+}
+.inputbox .form-group{
+  margin-bottom: 1rem !important;
 }

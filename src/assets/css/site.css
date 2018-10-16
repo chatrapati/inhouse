@@ -542,7 +542,8 @@ border-radius: 0 !important;
   width: 90%;
   height: 250px;
   margin: auto;
-  background-color: orange;
+  /* background-color: orange; */
+  background: linear-gradient(#E14603,#C23507,#AE280D);
 }
 
 .itembox a:hover .hero2 {
@@ -551,7 +552,7 @@ border-radius: 0 !important;
   border-style: solid;
   margin: auto;
   border-width: 17px 14px 0 14px;
-  border-color: orange transparent transparent transparent;
+  border-color: #AE280D transparent transparent transparent;
   line-height: 0;
 }
 
@@ -562,10 +563,13 @@ border-radius: 0 !important;
 } */
 
 #nabarBox {
-  background: #f58736;
+  background: url(../../assets/images/bg_04.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* Resize the background image to cover the entire container */
   margin-left: -3px;
   margin-top: 10px;
   height: 250px;
+  margin-bottom: 5rem !important;
 }
 
 .itembox .card {

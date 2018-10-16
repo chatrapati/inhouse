@@ -1,6 +1,9 @@
 #nabarBox{
     margin-top: 15px;
     margin-bottom:  1.5rem;
+    /* background: url(../../../assets/images/bg_04.png); */
+    background-repeat: no-repeat;
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 .inputbox{
     margin-bottom: 1rem;

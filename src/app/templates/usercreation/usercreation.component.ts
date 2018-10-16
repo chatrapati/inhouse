@@ -18,7 +18,7 @@ export class UsercreationComponent implements OnInit {
   ngOnInit() {
     // console.log("genderList===>", genderList);
     // console.log("martialList===>", martialList);
-    // this.officeDetails = true;
+    this.officeDetails = true;
     // for (let list of genderList) {
     //   console.log(list);
 

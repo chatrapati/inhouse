@@ -80,12 +80,13 @@
                   <h4 class="card-title text-md-center">Total number of Employees</h4>
                   <div class="userlink">
                     <a href="javascript:void(0)">
-                      <i class="fa fa-user fa-4x"></i>
+                      <!-- <i class="fa fa-user fa-4x"></i> -->
+                      <img src="../../../assets/images/employee.png" alt="employee img">
                     </a>
                   </div>
                   <div class="itemcount userlink">
                     <a class="btn btn-default btn-circle btn-lg " href="javascript:void(0)">60</a><br/>
-                    <a href="javascript:void(0)" (click)="employeesList()">List of Employees</a>
+                    <!-- <a href="javascript:void(0)" (click)="employeesList()">List of Employees</a> -->
                   </div>
                 </div>
               </div>
@@ -103,7 +104,7 @@
                   <h4 class="card-title text-md-center">Hiring</h4>
                   <div class="userlink">
                     <a href="#">
-                      <i class="fa fa-user fa-4x"></i>
+                      <img src="../../../assets/images/hiring_icon.png" alt="employee img">
                     </a>
                   </div>
                   <div class="itemcount userlink">
@@ -126,7 +127,7 @@
                   <h4 class="card-title text-md-center">Reliving</h4>
                   <div class="userlink">
                     <a href="#">
-                      <i class="fa fa-user fa-4x"></i>
+                      <img src="../../../assets/images/reliving_icon.png" alt="employee img">
                     </a>
                   </div>
                   <div class="itemcount userlink">
@@ -149,7 +150,7 @@
                   <h4 class="card-title text-md-center">Fired</h4>
                   <div class="userlink">
                     <a href="#">
-                      <i class="fa fa-user fa-4x"></i>
+                      <img src="../../../assets/images/fired_icon.png" alt="fired img">
                     </a>
                   </div>
                   <div class="itemcount userlink">
@@ -169,7 +170,7 @@
         <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="true" [colors]="colors"
           class="col-5" (chartClick)="onChartClick($event)">
         </canvas>
-        <div class="col-5">
+        <div class="col-4">
          
           <div class="col-12 " id="calendar-container" style="text-align: center">
             <div>
@@ -196,7 +197,7 @@
 
         </div>
         <div class="col-2">
-          <ul>
+          <!-- <ul>
             <li class="event-hire-bullet">
               <span class="event-head">Hiring</span>
               <span class="label label-default badge event-hire-headBatch">5</span>
@@ -239,7 +240,7 @@
             <p class="m-0">
               <a class="event-fire" href="javascript.void(0)">test</a>
             </p>
-          </ul>
+          </ul> -->
         </div>
       </div>
 

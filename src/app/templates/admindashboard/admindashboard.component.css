@@ -391,7 +391,7 @@
     margin-top: 10px;
 }
 
-.itembox a:hover .hero1 {
+/* .itembox a:hover .hero1 {
     width: 90%;
     height: 250px;
     margin: auto;
@@ -406,7 +406,7 @@
     border-width: 17px 14px 0 14px;
     border-color: orange transparent transparent transparent;
     line-height: 0;
-}
+} */
 
 /* .itembox a:hover .userlink
 {
@@ -415,7 +415,10 @@
 } */
 
 #nabarBox {
-    background: #f58736;
+    /* background: #f58736; */
+    background: url(../../../assets/images/bg_04.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* Resize the background image to cover the entire container */
     margin-left: -3px;
     margin-top: 10px;
     height: 250px;
@@ -574,4 +577,7 @@
 
 .event-fire:hover{
     color:#fd0000
+}
+.userlink img{
+    height:60px !important;
 }
