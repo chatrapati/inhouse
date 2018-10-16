@@ -132,9 +132,6 @@
     #wrapper.toggled i {
         float: right;
     }
-    #wrapper.toggled #userIcon i {
-        float: inherit !important;
-    }
     #page-content-wrapper {
         padding: 20px;
         position: relative;
@@ -177,12 +174,6 @@
     }
     #wrapper.toggled i {
         float: right;
-    }
-    #wrapper.toggled #userIcon i {
-        float: inherit !important;
-    }
-    #userIcon i {
-        float: inherit !important;
     }
     #wrapper i {
         float: right;
@@ -404,10 +395,7 @@
     width: 90%;
     height: 250px;
     margin: auto;
-    /* background-color: orange; */
-    background-image: linear-gradient(#E34601,#DE4402);
-    
-    /* background: url(../../../assets/images/hover_bg.png) no-repeat; */
+    background-color: orange;
 }
 
 .itembox a:hover .hero2 {
@@ -415,13 +403,9 @@
     height: 0px;
     border-style: solid;
     margin: auto;
-    /* border-top: 20px solid #77c;
-    border-left: 10px solid #f6f6f6;
-    border-right: 10px solid #f6f6f6; */
     border-width: 17px 14px 0 14px;
-    border-color: #DE4402 transparent transparent transparent;
+    border-color: orange transparent transparent transparent;
     line-height: 0;
-
 }
 
 /* .itembox a:hover .userlink
@@ -431,9 +415,7 @@
 } */
 
 #nabarBox {
-    background: url(../../../assets/images/bg_04.png) no-repeat;
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background: #f58736;
     margin-left: -3px;
     margin-top: 10px;
     height: 250px;
@@ -472,8 +454,7 @@
 .itembox .card-title {
     margin-top: 5px;
     margin-bottom: 20px;
-    font-size: 1.1rem !important;
-    font-weight:bold;
+    font-size: 1.3rem !important;
 }
 
 #nabarBox i {
@@ -593,13 +574,4 @@
 
 .event-fire:hover{
     color:#fd0000
-}
-.userlink img{
-height:60px;
-}
-.hero1 .card-body{
-    padding-top: 2.3rem !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-bottom: 0 !important;
 }
