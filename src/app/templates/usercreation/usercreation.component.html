@@ -57,8 +57,7 @@
                 <label for="gender" class="control-label">Gender</label>
                 <select class="form-control gendercontrol" name="gender" id="gender" [(ngModel)]="user['gender']" #gender="ngModel" required>
                   <option [ngValue]="undefined" disabled selected>Select</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
+                  <option *ngFor="let list of genderList" [ngValue]="list['value']"> {{list['key']}}</option>
                 </select>
                 <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="alert alert-danger">
                   Select Gender
@@ -97,12 +96,8 @@
                 <label for="martialStatus" class="control-label">Martial status</label>
                 <select class="form-control gendercontrol" name="martialStatus" id="martialStatus" [(ngModel)]="user['martialStatus']" #martialStatus="ngModel"
                   required>
-                  <option [ngValue]="undefined" disabled selected>Select</option>
-                  <option value="Single">Single</option>
-                  <option value="Married">Married</option>
-                  <option value="Seperated">Seperated</option>
-                  <option value="Divorced">Divorced</option>
-                  <option value="Widowed">Widowed</option>
+                  <option [ngValue]="undefined" disabled selected>Select Martial Status</option>
+                  <option *ngFor="let list of martialStatusList" [ngValue]="list['value']"> {{list['key']}}</option>
                 </select>
                 <div *ngIf="martialStatus.invalid && (martialStatus.dirty || martialStatus.touched)" class="alert alert-danger">
                   Select Martial Status
@@ -112,10 +107,13 @@
             <div class="col-4">
               <div class="form-group">
                 <label for="qualification" class="control-label">Qualification</label>
-                <input type="text" id="qualification" name="qualification" class="form-control" [(ngModel)]="user['qualification']" placeholder="Qualification"
-                  value="" #qualification="ngModel" required>
+                <select class="form-control gendercontrol" name="qualification" id="qualification" [(ngModel)]="user['qualification']" #qualification="ngModel"
+                  required>
+                  <option [ngValue]="undefined" disabled selected>Select Qualification</option>
+                  <option *ngFor="let list of qualificationsList" [ngValue]="list['value']"> {{list['key']}}</option>
+                </select>
                 <div *ngIf="qualification.invalid && (qualification.dirty || qualification.touched)" class="alert alert-danger">
-                  Enter Qualification
+                  Select Qualification
                 </div>
               </div>
             </div>
@@ -216,15 +214,8 @@
                 <label for="designation" class="control-label">Designation</label>
                 <select class="form-control gendercontrol" name="designation" id="designation" [(ngModel)]="user['designation']" #designation="ngModel"
                   required>
-                  <option [ngValue]="undefined" disabled selected>Select</option>
-                  <option value="Project Manager">Project Manager</option>
-                  <option value="Team Lead">Team Lead</option>
-                  <option value="UI Developer">UI Developer</option>
-                  <option value="UIX Designer">UIX Designer</option>
-                  <option value="Python Developer">Python Developer</option>
-                  <option value="Android Developer">Android Developer</option>
-                  <option value="IOS Developer">IOS Developer</option>
-                  <option value=".Net Developer">.Net Developer</option>
+                  <option [ngValue]="undefined" disabled selected>Select Designation</option>
+                  <option *ngFor="let list of rolesList" [ngValue]="list['value']"> {{list['key']}}</option>
                 </select>
                 <div *ngIf="designation.invalid && (designation.dirty || designation.touched)" class="alert alert-danger">
                   Select Designation
@@ -236,15 +227,8 @@
                 <label for="department" class="control-label">Department</label>
                 <select class="form-control gendercontrol" name="department" id="department" [(ngModel)]="user['department']" #department="ngModel"
                   required>
-                  <option [ngValue]="undefined" disabled selected>Select</option>
-                  <option value="HR Department">HR Department</option>
-                  <option value="Development Department">Development Department</option>
-                  <option value="Marketing Department">Marketing Department</option>
-                  <option value="Admin Department">Admin Department</option>
-                  <option value="Account Department">Account Department</option>
-                  <option value="Technical Department">Technical Department</option>
-                  <option value="Non-Technical Department">Non-Technical Department</option>
-                  <option value="Support Department">Support Department</option>
+                  <option [ngValue]="undefined" disabled selected>Select Department</option>
+                  <option *ngFor="let list of departmentList" [ngValue]="list['value']"> {{list['key']}}</option>
                 </select>
                 <!-- <input type="text" name="department" id="department" [(ngModel)]="user['department']" class="form-control" placeholder="Department"
                   value="" #department="ngModel" required> -->

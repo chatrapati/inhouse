@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import {Router} from '@angular/router';
-// import { GENDER_List as genderList, MARTIAL_List as martialList } from '../../../assets/dropdowns/selectoptions';
+import { GENDER_List, MARTIAL_List, ROLES_List, DEPARTMENT_List, QUALIFICATION_LIST } from '../../../assets/dropdowns/selectoptions';
 
 @Component({
   selector: 'app-usercreation',
@@ -9,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsercreationComponent implements OnInit {
 
+  departmentList: any;
+  rolesList: any;
+  genderList: any;
+  martialStatusList: any;
+  qualificationsList:any;
   user: any = {};
   officeDetails: boolean = false;
   personalDetails: boolean = false;
@@ -18,6 +23,11 @@ export class UsercreationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.qualificationsList=QUALIFICATION_LIST;
+    this.martialStatusList=MARTIAL_List;
+    this.genderList=GENDER_List;
+    this.rolesList=ROLES_List;
+    this.departmentList=DEPARTMENT_List;
     // console.log("genderList===>", genderList);
     // console.log("martialList===>", martialList);
     this.officeDetails = true;

@@ -1,0 +1,77 @@
+export const GENDER_List:any=[{"key":"Male", "value":"Male"},{"key":"Female", "value":"Female"}]
+
+export const MARTIAL_List:any=[{key:"Single", value:"Single"},{key:"Married", value:"Married"},{key:"Seperated", value:"Seperated"},{key:"Divorced", value:"Divorced"},{key:"Widowed", value:"Widowed"}]
+
+export const ROLES_List:any=[
+    {key:"Project Manager", value:"Project Manager"},
+    {key:"Team Lead", value:"Team Lead"},
+    {key:"UI Developer", value:"UI Developer"},
+    {key:"UIX Designer", value:"UIX Designer"},
+    {key:"Python Developer", value:"Python Developer"},
+    {key:"Android Developer", value:"Android Developer"},
+    {key:"IOS Developer", value:"IOS Developer"},
+    {key:".Net Developer", value:".Net Developer"},
+]
+
+export const DEPARTMENT_List:any=[
+    {key:"HR Department", value:"HR Department"},
+    {key:"Development Department", value:"Development Department"},
+    {key:"Marketing Department", value:"Marketing Department"},
+    {key:"Admin Department", value:"Admin Department"},
+    {key:"Account Department", value:"Account Department"},
+    {key:"Technical Department", value:"Technical Department"},
+    {key:"Non-Technical Department", value:"Non-Technical Department"},
+    {key:"Support Department", value:"Support Department"},
+]
+
+export const QUALIFICATION_LIST:any=[
+    {key:"B.A", value:"B.A"},
+    {key:"B.Arch", value:"B.Arch"},
+    {key:"BCA", value:"BCA"},
+    {key:"B.B.A/B.M.S", value:"B.B.A/B.M.S"},
+    {key:"B.Com", value:"B.Com"},
+    {key:"B.Ed", value:"B.Ed"},
+    {key:"BDS", value:"BDS"},
+    {key:"BHM", value:"BHM"},
+    {key:"B.Pharma", value:"B.Pharma"},
+    {key:"B.Sc", value:"B.Sc"},
+    {key:"B.Tech / B.E", value:"B.Tech / B.E"},
+    {key:"LLB", value:"LLB"},
+    {key:"MBBS", value:"MBBS"},
+    {key:"Diploma", value:"Diploma"},
+    {key:"BVSC", value:"BVSC"},
+    {key:"BAMS", value:"BAMS"},
+    {key:"BHMS", value:"BHMS"},
+    {key:"B.EI.Ed", value:"B.EI.Ed"},
+    {key:"B.P.Ed", value:"B.P.Ed"},
+    {key:"B.Des", value:"B.Des"},
+    {key:"BFA", value:"BFA"},
+    {key:"B.U.M.S", value:"B.U.M.S"},
+    {key:"CA", value:"CA"},
+    {key:"CS", value:"CS"},
+    {key:"ICWA(CMA)", value:"ICWA(CMA)"},
+    {key:"Integrated PG", value:"Integrated PG"},
+    {key:"LLM", value:"LLM"},
+    {key:"M.A", value:"M.A"},
+    {key:"M.Arch", value:"M.Arch"},
+    {key:"M.Com", value:"M.Com"},
+    {key:"M.Ed", value:"M.Ed"},
+    {key:"M.Pharma", value:"M.Pharma"},
+    {key:"MS / M.sc(Science)", value:"MS / M.sc(Science)"},
+    {key:"M.Tech", value:"M.Tech"},
+    {key:"MBA / PGDM", value:"MBA / PGDM"},
+    {key:"MCA", value:"MCA"},
+    {key:"Medical-MS / MD", value:"Medical-MS / MD"},
+    {key:"PG Diploma", value:"PG Diploma"},
+    {key:"MVSC", value:"MVSC"},
+    {key:"MCM", value:"MCM"},
+    {key:"MDS", value:"MDS"},
+    {key:"MFA", value:"MFA"},
+    {key:"M.Des", value:"M.Des"},
+    {key:"DM", value:"DM"},
+    {key:"M.Ch", value:"M.Ch"},
+    {key:"Ph.D / Doctorate", value:"Ph.D / Doctorate"},
+    {key:"MPHIL", value:"MPHIL"},
+    {key:"Other", value:"Other"}
+    
+]
