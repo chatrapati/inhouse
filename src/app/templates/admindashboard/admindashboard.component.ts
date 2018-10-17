@@ -11,6 +11,15 @@ import {Router} from "@angular/router";
 export class AdmindashboardComponent implements OnInit {
 
   isEmployeeList: boolean =false;
+
+  pageData:any=
+    {
+      totalEmployees:100,
+      appointedEmployees:20,
+      releivingEmployees:10,
+      firedEmployees:5
+    };
+
   public date = moment();
 
   public daysArr;
@@ -18,26 +27,80 @@ export class AdmindashboardComponent implements OnInit {
   public dateForm: FormGroup;
 
   chartOptions = {
-    responsive: true    // THIS WILL MAKE THE CHART RESPONSIVE (VISIBLE IN ANY DEVICE).
+    responsive: true,
+    scales : {
+      yAxes: [{
+         ticks: {
+            steps : 10,
+            stepValue : 10,
+            max : 100,
+          }
+      }] 
+    }    // THIS WILL MAKE THE CHART RESPONSIVE (VISIBLE IN ANY DEVICE).
   }
 
   labels = ['Total Employees', 'Hiring', 'Relieving', 'Fired'];
 
   // STATIC DATA FOR THE CHART IN JSON FORMAT.
-  chartData = [
-    {
-      label: '1st Year',
-      data: [60, 5, 3, 2]
-    }
+  // chartData:any = [
+  //   {
+  //     label: '1st Year',
+  //     data: [0, 0, 0, 0]
+  //   }
 
-  ];
+  // ];
 
+
+  chartData:any;
   // CHART COLOR.
   colors = [
     { // 1st Year.
       backgroundColor: '#f58736'
     }
   ]
+
+  setGraph(key){
+    if(key=='Total Employees'){
+      this.chartData = [
+        {
+          label: '1st Year',
+          data: [this.pageData['totalEmployees'], 0, 0, 0]
+        }
+    
+      ];
+     
+    }
+    if(key=='Appointed'){
+      this.chartData = [
+        {
+          label: '1st Year',
+          data: [0, this.pageData['appointedEmployees'], 0, 0]
+        }
+    
+      ];
+     
+    }
+    if(key=='Relieving'){
+      this.chartData = [
+        {
+          label: '1st Year',
+          data: [0, 0,this.pageData['releivingEmployees'],  0]
+        }
+    
+      ];
+     
+    }
+    if(key=='Fired'){
+      this.chartData = [
+        {
+          label: '1st Year',
+          data: [0, 0, 0, this.pageData['firedEmployees']]
+        }
+    
+      ];
+     
+    }
+  }
 
   // CHART CLICK EVENT.
   onChartClick(event) {
@@ -51,6 +114,8 @@ export class AdmindashboardComponent implements OnInit {
 
   ngOnInit() {
     this.daysArr = this.createCalendar(this.date);
+    
+    this.setGraph('Total Employees');
   }
 
 

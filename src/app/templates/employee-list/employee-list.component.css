@@ -1,0 +1,48 @@
+.m_r_5{
+    margin-right: 5px!important;
+}
+
+
+.float_right{
+    float: right;
+}
+
+.m_b_15{
+    margin-bottom: 15px!important;
+}
+
+.color_Login{
+    color:#c19841;
+}
+
+.bg_white{
+    background-color: #ffffff!important;
+}
+
+.p_l_0{
+    padding-left: 0px!important;
+}
+
+.m_t_10{
+    margin-top: 10px!important;
+}
+
+.m_b_15{
+    margin-bottom: 15px!important;
+}
+
+.m_b_35{
+    margin-bottom: 35px!important;
+}
+
+
+.page-link:hover{
+    background-color: #c19841!important;
+    color: #ffffff!important;
+}
+
+.selected_page{
+    background-color: #c19841!important;
+    color: #ffffff!important;
+}
+

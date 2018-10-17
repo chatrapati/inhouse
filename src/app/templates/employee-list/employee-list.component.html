@@ -1,6 +1,62 @@
-<p>
-  employee-list works!
-</p>
-<div>
-  
+<div class="col-12">
+  <table class="table table-striped m_b_15">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NAME</th>
+          <th scope="col">DESIGNATION</th>
+          <!-- <th scope="col">DEPARTMENT</th>
+          <th scope="col">MAIL(OFFICIAL)</th> -->
+          <!-- <th scope="col">CONTACT</th> -->
+          <th class="align_center" scope="col">ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of empList">
+         
+          <td>{{emp['id']}}</td>
+          <td>{{emp['name']}} {{emp['surName']}}</td>
+          <td>{{emp['designation']}}</td>
+          <!-- <td>{{emp['department']}}</td>
+          
+          <td>{{emp['mail']}}</td> -->
+          <!-- <td>{{emp['contact']}}</td> -->
+          <td class="align_center">
+            <div>
+                <i class="fa fa-pencil m_r_5 cursor" aria-hidden="true" (click)="editEvent(event)"></i>
+                <i class="fa fa-trash-o cursor" aria-hidden="true" (click)="showConfirm(event)" ></i>
+            </div>
+          </td>
+        </tr>
+        <tr *ngIf="totalRecords==0"><td colspan="6" style="text-align: center;">No Records Found</td></tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="6">
+            <nav class="float_right">
+              <ul class="pagination">
+                  <!--Arrow left-->
+                  <li class="page-item">
+                      <button class="page-link" (click)="prevRow()" [disabled]="disablePrev" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                          <span class="sr-only">Previous</span>
+                      </button>
+                  </li>
+
+                  <!--Numbers-->
+                  <li class="page-item" *ngFor="let num of currentSet" (click)="setPages(num)"><a class="page-link" [ngClass]="getCSSClasses(num)">{{num}}</a></li>
+
+                  <!--Arrow right-->
+                  <li class="page-item">
+                      <button class="page-link"  (click)="nextRow()" [disabled]="disableNext" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                          <span class="sr-only">Next</span>
+                      </button>
+                  </li>
+              </ul>
+            </nav>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
 </div>

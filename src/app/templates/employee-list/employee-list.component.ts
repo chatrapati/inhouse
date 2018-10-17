@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeListComponent implements OnInit {
 
+  empList:any;
+    
   constructor() { }
 
   ngOnInit() {
+    this.empList=JSON.parse(localStorage.getItem('data'))
   }
+
+  
 
 }

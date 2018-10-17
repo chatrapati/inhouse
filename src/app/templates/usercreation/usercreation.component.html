@@ -80,15 +80,16 @@
                 <label for="birthDate" class="control-label">Birth Date(Actual Date)</label>
                 <input type="date" id="birthDate" name="birthDate" class="form-control" [(ngModel)]="user['birthDate']" placeholder="Birth Date"
                   value="" #birthDate="ngModel" required>
-                  <span class="float-md-left">
+                  <div *ngIf="birthDate.invalid && (birthDate.dirty || birthDate.touched)" class="alert alert-danger">
+                    Enter Birth Date
+                  </div>
+                  <span>
                       <label class="checkbox chbklabel">
                         <input type="checkbox" name="isChecked" [(ngModel)]="isCheckedBirth" (change)="setActualDOB(isCheckedBirth?'true':'false')">
                        <span class="remtext">same as Date of Birth</span> 
                       </label>
                     </span>
-                <div *ngIf="birthDate.invalid && (birthDate.dirty || birthDate.touched)" class="alert alert-danger">
-                  Enter Birth Date
-                </div>
+                
               </div>
             </div>
             <div class="col-4">
@@ -133,15 +134,16 @@
                 <label for="permanentAddress" class="control-label">Permanent Address</label>
                 <input type="text" id="permanentAddress" name="permanentAddress" class="form-control" [(ngModel)]="user['permanentAddress']"
                   placeholder="Permanent Address" value="" #permanentAddress="ngModel" required>
-                  <span class="float-md-left">
+                  <div *ngIf="permanentAddress.invalid && (permanentAddress.dirty || permanentAddress.touched)" class="alert alert-danger">
+                    Enter Permanent Address
+                  </div>
+                  <span>
                       <label class="checkbox chbklabel">
                         <input type="checkbox" name="isChecked" [(ngModel)]="isChecked" (change)="setPermanantAddress(isChecked?'true':'false')">
                        <span class="remtext">same as Present Address</span> 
                       </label>
                     </span>
-                <div *ngIf="permanentAddress.invalid && (permanentAddress.dirty || permanentAddress.touched)" class="alert alert-danger">
-                  Enter Permanent Address
-                </div>
+                
               </div>
             </div>
             <div class="col-4">
