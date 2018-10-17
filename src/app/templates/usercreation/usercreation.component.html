@@ -214,20 +214,42 @@
             <div class="col-4">
               <div class="form-group ">
                 <label for="designation" class="control-label">Designation</label>
-                <input type="text" name="designation" id="designation" [(ngModel)]="user['designation']" class="form-control" placeholder="Designation"
-                  value="" #designation="ngModel" required>
+                <select class="form-control gendercontrol" name="designation" id="designation" [(ngModel)]="user['designation']" #designation="ngModel"
+                  required>
+                  <option [ngValue]="undefined" disabled selected>Select</option>
+                  <option value="Project Manager">Project Manager</option>
+                  <option value="Team Lead">Team Lead</option>
+                  <option value="UI Developer">UI Developer</option>
+                  <option value="UIX Designer">UIX Designer</option>
+                  <option value="Python Developer">Python Developer</option>
+                  <option value="Android Developer">Android Developer</option>
+                  <option value="IOS Developer">IOS Developer</option>
+                  <option value=".Net Developer">.Net Developer</option>
+                </select>
                 <div *ngIf="designation.invalid && (designation.dirty || designation.touched)" class="alert alert-danger">
-                  Enter Designation
+                  Select Designation
                 </div>
               </div>
             </div>
             <div class="col-4">
               <div class="form-group ">
                 <label for="department" class="control-label">Department</label>
-                <input type="text" name="department" id="department" [(ngModel)]="user['department']" class="form-control" placeholder="Department"
-                  value="" #department="ngModel" required>
+                <select class="form-control gendercontrol" name="department" id="department" [(ngModel)]="user['department']" #department="ngModel"
+                  required>
+                  <option [ngValue]="undefined" disabled selected>Select</option>
+                  <option value="HR Department">HR Department</option>
+                  <option value="Development Department">Development Department</option>
+                  <option value="Marketing Department">Marketing Department</option>
+                  <option value="Admin Department">Admin Department</option>
+                  <option value="Account Department">Account Department</option>
+                  <option value="Technical Department">Technical Department</option>
+                  <option value="Non-Technical Department">Non-Technical Department</option>
+                  <option value="Support Department">Support Department</option>
+                </select>
+                <!-- <input type="text" name="department" id="department" [(ngModel)]="user['department']" class="form-control" placeholder="Department"
+                  value="" #department="ngModel" required> -->
                 <div *ngIf="department.invalid && (department.dirty || department.touched)" class="alert alert-danger">
-                  Enter Department
+                  Select Department
                 </div>
               </div>
             </div>

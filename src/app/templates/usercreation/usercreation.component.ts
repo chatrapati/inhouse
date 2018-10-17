@@ -13,6 +13,8 @@ export class UsercreationComponent implements OnInit {
   officeDetails: boolean = false;
   personalDetails: boolean = false;
   documentDetails: boolean = false;
+  isChecked: boolean = false;
+  isCheckedBirth: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -102,6 +104,8 @@ export class UsercreationComponent implements OnInit {
     this.officeDetails = true;
     this.personalDetails = false;
     this.documentDetails = false;
+    this.isCheckedBirth=false;
+    this.isChecked=false;
   }
 
   setPermanantAddress(event){
