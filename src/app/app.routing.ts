@@ -7,6 +7,7 @@ import { AdmindashboardComponent } from './templates/admindashboard/admindashboa
 import { LoginComponent } from './templates/login/login.component';
 import { ModuleWithProviders } from '@angular/core';
 import { EmployeeListComponent } from './templates/employee-list/employee-list.component';
+import { EditUserComponent } from './templates/edit-user/edit-user.component';
 
 export const appRoutes: Routes = [
     { path: 'login', component: LoginComponent},
@@ -17,6 +18,7 @@ export const appRoutes: Routes = [
     { path:'roles', component: RolesComponent },
     { path:'hrManagement', component: HrmanagementComponent },
     { path:'employeeList', component: EmployeeListComponent },
+    { path:'editEmployee', component:EditUserComponent },
     { path: '**', redirectTo: 'userDashboard', pathMatch: 'full' }
   ];
 

@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-// import {Router} from '@angular/router';
 import { GENDER_List, MARTIAL_List, ROLES_List, DEPARTMENT_List, QUALIFICATION_LIST } from '../../../assets/dropdowns/selectoptions';
+import {Router} from '@angular/router';1
+
+import { Employee } from '../employee-list/employee';
 
 @Component({
-  selector: 'app-usercreation',
-  templateUrl: './usercreation.component.html',
-  styleUrls: ['./usercreation.component.css']
+  selector: 'app-edit-user',
+  templateUrl: './edit-user.component.html',
+  styleUrls: ['./edit-user.component.css']
 })
-export class UsercreationComponent implements OnInit {
+export class EditUserComponent implements OnInit {
 
   departmentList: any;
   rolesList: any;
@@ -20,9 +22,12 @@ export class UsercreationComponent implements OnInit {
   documentDetails: boolean = false;
   isChecked: boolean = false;
   isCheckedBirth: boolean = false;
-  constructor() { }
+
+  constructor(private employee:Employee, private router:Router) { }
 
   ngOnInit() {
+    let selectedEmployee=this.employee.getEmployee();
+    this.user=this.employee.getEmployee();
     this.qualificationsList=QUALIFICATION_LIST;
     this.martialStatusList=MARTIAL_List;
     this.genderList=GENDER_List;
@@ -31,39 +36,15 @@ export class UsercreationComponent implements OnInit {
     // console.log("genderList===>", genderList);
     // console.log("martialList===>", martialList);
     this.officeDetails = true;
-    // let data=[
-    //   { "empId": "GST/HYD/102",
-    // "empName": "ShivaKrishna ",
-    // "surname": "Kurra",
-    // "gender": "Male",
-    // "dob": "1996-02-23",
-    // "birthDate": "1996-02-23",
-    // "martialStatus": "Single",
-    // "qualification": "B.Sc",
-    // "presentAddress": "A:201, GST, The Platina, Gacchibowle, Hyderabad",
-    // "permanentAddress": "A:201, GST, The Platina, Gacchibowle, Hyderabad",
-    // "contact": "7396310580",
-    // "econtact": "9879878855",
-    // "mail": "shivakrishna@goldensuntechnology.com",
-    // "dojGST": "2018-07-21",
-    // "docGST": "2018-07-01",
-    // "department": "Development Department",
-    // "emailOfficial": "shivakrishna@goldensuntechnology.com",
-    // "ctc": "245000",
-    // "reportingManager": "Sanjay",
-    // "designation": "UI Developer",
-    // "prevEmployement": "vestrics"},
-    //   {empId:'GST/HYD/09',empName:'Radhika', surName:'Katanguri', designation:'Python Developer', department:'Development Department', mail:'radhika@goldensuntechnology.com', contact:'7893244612'},
-    //   {empId:'GST/HYD/078',empName:'Shanthi', surName:'vishwa', designation:'Front office executive',department :'Admin Department', mail:'shanti@goldensuntechnology.com',contact:'7702367724'},
-    //   {empId:'GST/HYD/98',empName:'Srinivas', surName:'Chinnam', designation:'UI Developer', mail:'srinivas@goldensuntechnology.com', department:'Development Department', contact:'8944457795'},
-    //   {empId:'GST/HYD/100',empName:'Praveen', surName:'Madishetty', designation:'Angular/UI Developer',department:'Development Department', mail:'praveen@goldensuntechnology.com', contact:'7207675960'},
-    //   ]
-    //   localStorage.setItem('data', JSON.stringify(data));
-    // for (let list of genderList) {
-    //   console.log(list);
-
-    // }
+    if(!this.user['empId']){
+      this.router.navigateByUrl('/')
+    }
+    
+    console.log("=====================");
+    console.log(selectedEmployee);
+    console.log("=====================");
   }
+
   setSelectTab(tab) {
     this.officeDetails = false;
     this.personalDetails = false;
@@ -110,19 +91,19 @@ export class UsercreationComponent implements OnInit {
 
   finalresult(){
     console.log("user===>", this.user);
-    let data=JSON.parse(localStorage.getItem('data'))
-    if(data[0].empID!=''){
-      console.log("in iff");
+    // let data=JSON.parse(localStorage.getItem('data'))
+    // if(data[0].empID!=''){
+    //   console.log("in iff");
       
-      console.log("data",data);
+    //   console.log("data",data);
       
-      data.push(this.user);
-      localStorage.setItem('data', JSON.stringify(data));
-    }else{
-      console.log("in else");
-      console.log("data",data);
-      localStorage.setItem('data', JSON.stringify([this.user]));
-    }
+    //   data.push(this.user);
+    //   localStorage.setItem('data', JSON.stringify(data));
+    // }else{
+    //   console.log("in else");
+    //   console.log("data",data);
+    //   localStorage.setItem('data', JSON.stringify([this.user]));
+    // }
     
     this.user={};
     this.officeDetails = true;
@@ -148,6 +129,5 @@ export class UsercreationComponent implements OnInit {
     }
     
   }
-
 
 }

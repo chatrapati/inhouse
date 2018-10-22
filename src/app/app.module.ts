@@ -17,6 +17,8 @@ import { DepartmentsComponent } from './templates/departments/departments.compon
 import { RolesComponent } from './templates/roles/roles.component';
 import { HrmanagementComponent } from './templates/hrmanagement/hrmanagement.component';
 import { EmployeeListComponent } from './templates/employee-list/employee-list.component';
+import { EditUserComponent } from './templates/edit-user/edit-user.component';
+import { Iemployee,Employee } from './templates/employee-list/employee';
 
 
 
@@ -32,7 +34,9 @@ import { EmployeeListComponent } from './templates/employee-list/employee-list.c
     DepartmentsComponent,
     RolesComponent,
     HrmanagementComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    EditUserComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,7 @@ import { EmployeeListComponent } from './templates/employee-list/employee-list.c
     routing,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [Employee],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
