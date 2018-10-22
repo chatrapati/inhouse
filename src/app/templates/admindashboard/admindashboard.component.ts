@@ -27,7 +27,7 @@ export class AdmindashboardComponent implements OnInit {
   public dateForm: FormGroup;
 
   chartOptions = {
-    responsive: true,
+    responsive: true,// THIS WILL MAKE THE CHART RESPONSIVE (VISIBLE IN ANY DEVICE).
     scales : {
       yAxes: [{
          ticks: {
@@ -36,34 +36,39 @@ export class AdmindashboardComponent implements OnInit {
             max : 100,
           }
       }] 
-    }    // THIS WILL MAKE THE CHART RESPONSIVE (VISIBLE IN ANY DEVICE).
+    }    
   }
 
   labels = ['Total Employees', 'Hiring', 'Relieving', 'Fired'];
 
   // STATIC DATA FOR THE CHART IN JSON FORMAT.
-  // chartData:any = [
-  //   {
-  //     label: '1st Year',
-  //     data: [0, 0, 0, 0]
-  //   }
-
-  // ];
-
-
   chartData:any;
   // CHART COLOR.
   colors = [
-    { // 1st Year.
+    { 
       backgroundColor: '#f58736'
     }
   ]
+
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.initDateForm()
+  }
+
+  ngOnInit() {
+    this.daysArr = this.createCalendar(this.date);
+    this.chartData= [
+        {
+          label: 'Employees',
+          data: [this.pageData['totalEmployees'], this.pageData['appointedEmployees'], this.pageData['releivingEmployees'], this.pageData['firedEmployees']]
+        }
+      ];
+  }
 
   setGraph(key){
     if(key=='Total Employees'){
       this.chartData = [
         {
-          label: '1st Year',
+          label: 'Total Employees',
           data: [this.pageData['totalEmployees'], 0, 0, 0]
         }
     
@@ -73,7 +78,7 @@ export class AdmindashboardComponent implements OnInit {
     if(key=='Appointed'){
       this.chartData = [
         {
-          label: '1st Year',
+          label: 'Appointed',
           data: [0, this.pageData['appointedEmployees'], 0, 0]
         }
     
@@ -83,7 +88,7 @@ export class AdmindashboardComponent implements OnInit {
     if(key=='Relieving'){
       this.chartData = [
         {
-          label: '1st Year',
+          label: 'Relieving',
           data: [0, 0,this.pageData['releivingEmployees'],  0]
         }
     
@@ -93,7 +98,7 @@ export class AdmindashboardComponent implements OnInit {
     if(key=='Fired'){
       this.chartData = [
         {
-          label: '1st Year',
+          label: 'Fired',
           data: [0, 0, 0, this.pageData['firedEmployees']]
         }
     
@@ -106,20 +111,7 @@ export class AdmindashboardComponent implements OnInit {
   onChartClick(event) {
     console.log(event);
   }
-
-
-  constructor(private fb: FormBuilder, private router: Router) {
-    this.initDateForm()
-  }
-
-  ngOnInit() {
-    this.daysArr = this.createCalendar(this.date);
-    
-    this.setGraph('Total Employees');
-  }
-
-
-
+  
   isSelected(day) {
     if (!day) {
       return false;

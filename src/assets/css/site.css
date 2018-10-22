@@ -611,3 +611,7 @@ border-radius: 0 !important;
 #nabarBox i {
   float: inherit !important;
 }
+
+.cursor{
+  cursor: pointer;
+}

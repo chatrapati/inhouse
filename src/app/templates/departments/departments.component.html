@@ -9,7 +9,7 @@
 
     </div>
     <div class="card-columns custom-columns">
-      <div class="card bg-warning">
+      <div class="card bg-warning cursor" (click)="setGraph('HR')">
         <div class="card-body text-center">
           <div class="card-text">
             <h5>Hr</h5>
@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div class="card bg-warning">
+      <div class="card bg-warning cursor" (click)="setGraph('Account')">
           <div class="card-body text-center">
             <div class="card-text">
               <h5>Account</h5>
@@ -25,7 +25,7 @@
             </div>
           </div>
         </div>
-      <div class="card bg-warning">
+      <div class="card bg-warning cursor" (click)="setGraph('Development')">
         <div class="card-body text-center">
           <div class="card-text">
             <h5>Development</h5>
@@ -33,7 +33,7 @@
           </div>
         </div>
       </div>
-      <div class="card bg-warning">
+      <div class="card bg-warning cursor" (click)="setGraph('Technical')">
           <div class="card-body text-center">
             <div class="card-text">
               <h5>Technical</h5>
@@ -41,7 +41,7 @@
             </div>
           </div>
         </div>
-      <div class="card bg-warning">
+      <div class="card bg-warning cursor" (click)="setGraph('Marketing')">
         <div class="card-body text-center">
           <div class="card-text">
             <h5>Marketing</h5>
@@ -49,7 +49,7 @@
           </div>
         </div>
       </div>
-      <div class="card bg-warning">
+      <div class="card bg-warning cursor" (click)="setGraph('Non-Technical')">
           <div class="card-body text-center">
             <div class="card-text">
               <h5>Non-Technical</h5>
@@ -57,7 +57,7 @@
             </div>
           </div>
         </div>
-      <div class="card bg-warning">
+      <div class="card bg-warning cursor" (click)="setGraph('Admin')">
         <div class="card-body text-center">
           <div class="card-text">
             <h5>Admin</h5>
@@ -65,7 +65,7 @@
           </div>
         </div>
       </div>
-      <div class="card bg-warning">
+      <div class="card bg-warning cursor" (click)="setGraph('Support')">
           <div class="card-body text-center">
             <div class="card-text">
               <h5>Support</h5>
@@ -76,35 +76,11 @@
     </div>
   </div>
   <div class="row">
-    <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="true" [colors]="colors"
-      class="col-7" (chartClick)="onChartClick($event)">
+    <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="false" [colors]="colors"
+      class="col-8" (chartClick)="onChartClick($event)">
     </canvas>
-    <div class="col-5">
-     
-      <div class="col-12 " id="calendar-container" style="text-align: center">
-        <div>
-          <i class="fa fa-chevron-left" (click)="prevMonth()" style="float: left; cursor: pointer;"></i>
-          {{date.format('MMMM')}} {{date.format('YYYY')}}
-          <i class="fa fa-chevron-right" (click)="nextMonth()" style="float: right; cursor: pointer;"></i>
-        </div>
-      </div>
-      <div id="calendar-container" class="col-12" style="text-align: center">
-        <div class="row m-0">
-          <div class="p-2 calendar-week-days bd-highlight">SU</div>
-          <div class="p-2 calendar-week-days bd-highlight">MO</div>
-          <div class="p-2 calendar-week-days bd-highlight">TU</div>
-          <div class="p-2 calendar-week-days bd-highlight">WE</div>
-          <div class="p-2 calendar-week-days bd-highlight">TH</div>
-          <div class="p-2 calendar-week-days bd-highlight">FR</div>
-          <div class="p-2 calendar-week-days bd-highlight">SA</div>
-        </div>
-        <div class="row m-0">
-          <div class="p-2 calendar-days bd-highlight " *ngFor="let day of daysArr" (click)="selectedDate(day)" [ngClass]="{'inactive':!day, 'today':todayCheck(day)}">{{day?.date()}}</div>
-        </div>
-      </div>
-
-
-    </div>
+    <!-- <div class="col-5">
+    </div> -->
     
   </div>
 </div>

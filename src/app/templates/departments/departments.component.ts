@@ -9,6 +9,19 @@ import { FormBuilder, FormGroup, RequiredValidator, Validators } from '@angular/
 })
 export class DepartmentsComponent implements OnInit {
 
+  pageData:any=
+    {
+      hrDepartment:25,
+      developmentDepartment:35,
+      marketingDepartment:60,
+      adminDepartment:18,
+      accountDepartment:25,
+      technicalDepartment:85,
+      nonTechnicalDepartment:70,
+      supportDepartment:50
+      
+    };
+
   public date = moment();
 
   public daysArr;
@@ -16,81 +29,29 @@ export class DepartmentsComponent implements OnInit {
   public dateForm: FormGroup;
 
   chartOptions = {
-    responsive: true    // THIS WILL MAKE THE CHART RESPONSIVE (VISIBLE IN ANY DEVICE).
+    responsive: true,    // THIS WILL MAKE THE CHART RESPONSIVE (VISIBLE IN ANY DEVICE).
+    scales : {
+      yAxes: [{
+         ticks: {
+            steps : 10,
+            stepValue : 10,
+            max : 100,
+          }
+      }] 
+    }
   }
 
   labels = ['HR','Development','Marketing','Admin','Account','Technical','Non-Technical','Support'];
 
   // STATIC DATA FOR THE CHART IN JSON FORMAT.
-  chartData = [
-    {
-      label: 'HR Department',
-      data: [25, 35, 60, 18, 25, 85, 70, 50]
-    },
-    // {
-    //   label: 'Development Department',
-    //   data: [60]
-    // },
-    // {
-    //   label: 'Marketing Department',
-    //   data: [60]
-    // },
-    // {
-    //   label: 'Admin Department',
-    //   data: [60]
-    // },
-    // {
-    //   label: 'Account Department',
-    //   data: [60]
-    // },
-    // {
-    //   label: 'Technical Department',
-    //   data: [60]
-    // },
-    // {
-    //   label: 'Non-Technical Department',
-    //   data: [60]
-    // },
-    // {
-    //   label: 'Support Department',
-    //   data: [6]
-    // }
-
-  ];
+  chartData:any=[];
 
   // CHART COLOR.
   colors = [
-    { // 1st Year.
+    { 
       backgroundColor: '#f58736'
-    },
-    // { 
-    //   backgroundColor: '#f58736'
-    // },
-    // { 
-    //   backgroundColor: '#f58736'
-    // },
-    // {
-    //   backgroundColor: '#f58736'
-    // },
-    // {
-    //   backgroundColor: '#f58736'
-    // },
-    // { 
-    //   backgroundColor: '#f58736'
-    // },
-    // {
-    //   backgroundColor: '#f58736'
-    // },
-    // { 
-    //   backgroundColor: '#f58736'
-    // }
+    }
   ]
-
-  // CHART CLICK EVENT.
-  onChartClick(event) {
-    console.log(event);
-  }
-
 
   constructor(private fb: FormBuilder) {
     this.initDateForm()
@@ -98,8 +59,101 @@ export class DepartmentsComponent implements OnInit {
 
   ngOnInit() {
     this.daysArr = this.createCalendar(this.date);
+    this.chartData = [
+      {
+        label: 'Departments',
+        data: [this.pageData['hrDepartment'], this.pageData['developmentDepartment'], this.pageData['marketingDepartment'], this.pageData['adminDepartment'], this.pageData['accountDepartment'], this.pageData['technicalDepartment'], this.pageData['nonTechnicalDepartment'], this.pageData['supportDepartment']]
+      }
+    ];
   }
 
+  setGraph(key){
+    if(key=='HR'){
+      this.chartData = [
+        {
+          label: 'HR',
+          data: [this.pageData['hrDepartment'], 0, 0, 0, 0, 0, 0, 0]
+        }
+    
+      ];
+     
+    }
+    if(key=='Development'){
+      this.chartData = [
+        {
+          label: 'Development',
+          data: [0, this.pageData['developmentDepartment'], 0, 0, 0, 0, 0, 0]
+        }
+    
+      ];
+     
+    }
+    if(key=='Marketing'){
+      this.chartData = [
+        {
+          label: 'Marketing',
+          data: [0, 0,this.pageData['marketingDepartment'],  0, 0, 0, 0, 0]
+        }
+    
+      ];
+     
+    }
+    if(key=='Admin'){
+      this.chartData = [
+        {
+          label: 'Admin',
+          data: [0, 0, 0, this.pageData['adminDepartment'], 0, 0, 0, 0]
+        }
+    
+      ];
+     
+    }
+    if(key=='Account'){
+      this.chartData = [
+        {
+          label: 'Account',
+          data: [0, 0, 0, 0, this.pageData['accountDepartment'], 0, 0, 0]
+        }
+    
+      ];
+     
+    }
+    if(key=='Technical'){
+      this.chartData = [
+        {
+          label: 'Technical',
+          data: [0, 0, 0, 0, 0, this.pageData['technicalDepartment'], 0, 0]
+        }
+    
+      ];
+     
+    }
+    if(key=='Non-Technical'){
+      this.chartData = [
+        {
+          label: 'Non-Technical',
+          data: [0, 0, 0, 0, 0, 0,this.pageData['nonTechnicalDepartment'],  0]
+        }
+    
+      ];
+     
+    }
+    if(key=='Support'){
+      this.chartData = [
+        {
+          label: 'Support',
+          data: [0, 0, 0, 0, 0, 0, 0, this.pageData['supportDepartment']]
+        }
+    
+      ];
+     
+    }
+  }
+
+  // CHART CLICK EVENT.
+  onChartClick(event) {
+    console.log(event);
+  }
 
 
   isSelected(day) {
