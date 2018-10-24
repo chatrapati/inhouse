@@ -106,3 +106,25 @@
     width: 100%!important;
     height: auto!important;
 }
+
+.deptsetting{
+    background: orangered;
+}
+
+.deptsetting-button{
+    color: #FFC105;
+}
+
+.d-inline.mx-auto.center {
+    text-align:center!important;
+    display:block!important;
+}
+
+.btntheme{
+    padding: 10px 50px !important;
+    background: #eb8035 !important;
+    color:#ffffff !important;
+    border:1px solid #eb8035 !important; 
+    margin-left: 2rem;
+    border-radius: 0 !important;
+}

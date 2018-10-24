@@ -3,84 +3,99 @@
     <div class="topright">
       <div class="card bg-light">
         <div class="card-header text-center">
-          <p class="card-text datespan"><span>Oct</span>  <span>2018</span></p>
+          <p class="card-text datespan">
+            <span>Oct</span>
+            <span>2018</span>
+          </p>
         </div>
       </div>
 
     </div>
     <div class="card-columns custom-columns">
-      <div class="card bg-warning cursor" (click)="setGraph('HR')">
+      <div class="card bg-warning cursor" (click)="setGraph(label)" *ngFor="let label of labels">
         <div class="card-body text-center">
           <div class="card-text">
-            <h5>Hr</h5>
+            <h5>{{label}}</h5>
             <h5>Department</h5>
           </div>
         </div>
       </div>
-      <div class="card bg-warning cursor" (click)="setGraph('Account')">
-          <div class="card-body text-center">
-            <div class="card-text">
-              <h5>Account</h5>
-              <h5>Department</h5>
-            </div>
-          </div>
-        </div>
-      <div class="card bg-warning cursor" (click)="setGraph('Development')">
-        <div class="card-body text-center">
-          <div class="card-text">
-            <h5>Development</h5>
-            <h5>Department</h5>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-warning cursor" (click)="setGraph('Technical')">
-          <div class="card-body text-center">
-            <div class="card-text">
-              <h5>Technical</h5>
-              <h5>Department</h5>
-            </div>
-          </div>
-        </div>
-      <div class="card bg-warning cursor" (click)="setGraph('Marketing')">
-        <div class="card-body text-center">
-          <div class="card-text">
-            <h5>Marketing</h5>
-            <h5>Department</h5>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-warning cursor" (click)="setGraph('Non-Technical')">
-          <div class="card-body text-center">
-            <div class="card-text">
-              <h5>Non-Technical</h5>
-              <h5>Department</h5>
-            </div>
-          </div>
-        </div>
-      <div class="card bg-warning cursor" (click)="setGraph('Admin')">
-        <div class="card-body text-center">
-          <div class="card-text">
-            <h5>Admin</h5>
-            <h5>Department</h5>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-warning cursor" (click)="setGraph('Support')">
-          <div class="card-body text-center">
-            <div class="card-text">
-              <h5>Support</h5>
-              <h5>Department</h5>
-            </div>
-          </div>
-        </div>
     </div>
   </div>
   <div class="row">
-    <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="false" [colors]="colors"
-      class="col-8" (chartClick)="onChartClick($event)">
+    <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="false"
+      [colors]="colors" class="col-8" (chartClick)="onChartClick($event)">
     </canvas>
-    <!-- <div class="col-5">
-    </div> -->
-    
+    <div class="col-4 ">
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header deptsetting" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link deptsetting-button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                aria-controls="collapseOne">
+                Add Department
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <form #addEmp="ngForm">
+              <div class="card-body">
+                <div class="form-group ">
+                  <label for="deptName" class="control-label">Department Name</label>
+                  <input type="text" id="deptName" name="deptName" class="form-control" [(ngModel)]="user['deptName']" placeholder="Department Name"
+                    value="" #deptName="ngModel" required>
+                  <div *ngIf="deptName.invalid && (deptName.dirty || deptName.touched)" class="alert alert-danger">
+                    Enter Department Name
+                  </div>
+                </div>
+                <div class="d-inline mx-auto center">
+                  <button (click)="setSelectTab('personalDetails')" [disabled]="addEmp.invalid" href="javascript:void(0)" class="btn btn-default btntheme">Save</button>
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header deptsetting" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed deptsetting-button" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Edit Department
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <form #editEmp="ngForm">
+              <div class="card-body">
+                <div class="form-group ">
+                  <label for="department" class="control-label">Department</label>
+                  <select class="form-control gendercontrol" name="department" id="department" [(ngModel)]="dept['department']" (change)="setSelected()"
+                    #department="ngModel" required>
+                    <option [ngValue]="undefined" disabled selected>Select Department</option>
+                    <option *ngFor="let list of departmentList" [ngValue]="list['value']">{{list['key']}}</option>
+                  </select>
+                  <div *ngIf="department.invalid && (department.dirty || department.touched)" class="alert alert-danger">
+                    Select Department
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <label for="deptName" class="control-label">Department Name</label>
+                  <input type="text" id="deptName" name="deptName" class="form-control" [(ngModel)]="dept['deptName']" placeholder="Department Name"
+                    value="" #deptName="ngModel" required>
+                  <div *ngIf="deptName.invalid && (deptName.dirty || deptName.touched)" class="alert alert-danger">
+                    Enter Department Name
+                  </div>
+                </div>
+                <div class="d-inline mx-auto center">
+                  <button (click)="updateDepartment()" [disabled]="editEmp.invalid" href="javascript:void(0)" class="btn btn-default btntheme">Update</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

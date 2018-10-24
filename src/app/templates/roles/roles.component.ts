@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { FormBuilder, FormGroup, RequiredValidator, Validators } from '@angular/forms';
+import { ROLES_List } from '../../../assets/dropdowns/selectoptions';
 
 @Component({
   selector: 'app-roles',
@@ -9,29 +10,58 @@ import { FormBuilder, FormGroup, RequiredValidator, Validators } from '@angular/
 })
 export class RolesComponent implements OnInit {
 
+  test: any;
+  user:any={};
+  roles:any={};
+  roleList: any;
   public date = moment();
 
   public daysArr;
 
   public dateForm: FormGroup;
 
+  pageData: any =
+    {
+      "ProjectManager": 25,
+      "TeamLead": 35,
+      "UIDeveloper": 60,
+      "UIXDesigner": 18,
+      "PythonDeveloper": 25,
+      "AndroidDeveloper": 85,
+      "IOSDeveloper": 70,
+      ".NetDeveloper": 50
+
+    };
+
   chartOptions = {
-    responsive: true    // THIS WILL MAKE THE CHART RESPONSIVE (VISIBLE IN ANY DEVICE).
+    responsive: true,    // THIS WILL MAKE THE CHART RESPONSIVE (VISIBLE IN ANY DEVICE).
+    scales: {
+      yAxes: [{
+        ticks: {
+          steps: 10,
+          stepValue: 10,
+          max: 100,
+        }
+      }]
+    }
   }
 
-  labels = ['Project Manager', 'Team Lead', 'UI Developer', 'UIX Designer', 'Python Developer', 'Android Developer', 'IOS Developer', '.Net Developer'];
-
+  verification = ['Manager', 'Lead', 'Analyst', 'Developer', 'Designer', 'Executive', 'Specialist', 'Writer', 'Administrator', 'Admin', 'Bureaucrat', 'Officer', 'Mentor', 'Support', 'Leader', 'Consultant', 'Representative', 'Apprentice', 'Director', 'Head', 'Engineer', 'Accountant', 'Controller', 'Auditor', 'Clerk', 'President']
+  headings: any = [];
+  labels:any =[];
+  
   // STATIC DATA FOR THE CHART IN JSON FORMAT.
-  chartData = [
-    {
-      label: 'Roles',
-      data: [25, 35, 60, 18, 25, 85, 70, 50]
-    }
-  ];
+  chartData: any = [];
+  // chartData = [
+  //   {
+  //     label: 'Roles',
+  //     data: [25, 35, 60, 18, 25, 85, 70, 50]
+  //   }
+  // ];
 
   // CHART COLOR.
   colors = [
-    { 
+    {
       backgroundColor: '#f58736'
     }
   ]
@@ -47,10 +77,43 @@ export class RolesComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.roleList = ROLES_List;
     this.daysArr = this.createCalendar(this.date);
+    this.setLabel();
   }
 
+  setLabel() {
+    let list: any = [];
+    let data: any = [];
+    for (let [key, value] of Object.entries(this.pageData)) {
+      let obj = {};
+      obj = this.setHeader(key);
+      this.headings.push(obj);
+      this.labels.push(key);
+      data.push(value)
 
+    }
+    // var role= "ProjectManager";
+    this.chartData = [
+      {
+        label: 'Roles',
+        data: data
+      }
+    ];
+
+  }
+
+  setHeader(key) {
+    let obj = {};
+    for (let elem of this.verification) {
+      let x = key.lastIndexOf(elem);
+      //  console.log("=========>", x);
+      if (x > 0) {
+        obj = { start: key.substring(0, x), end: elem }
+      }
+    }
+    return obj
+  }
 
   isSelected(day) {
     if (!day) {
@@ -109,10 +172,60 @@ export class RolesComponent implements OnInit {
     for (let n = 0; n < firstDay.weekday(); n++) {
       days.unshift(null);
     }
-    console.log(days);
 
     return days
   }
 
+  setGraph(key) {
+    let data: any = [];
+    let finalkey = key['start']+key['end'];
+    for (let i = 0; i < this.labels.length; i++) {
+      if (i == this.labels.indexOf(finalkey)) {
+        data.push(this.pageData[finalkey])
+      }
+      else {
+        data.push(0)
+      }
+    }
+    this.chartData = [
+      {
+        label: key,
+        data: data
+      }
+    ];
+  }
+
+  setSelected() {
+    this.roles['roleName'] = this.roles['selected'];
+  }
+
+  checkForId() {
+    for (let department of this.roleList) {
+      if (department['value'] == this.roles['selected']) {
+        department['key'] = this.roles['roleName'];
+        department['value'] = this.roles['roleName'];
+        return department
+      }
+    }
+  }
+
+  setDropdown() {
+    for (let department of this.roleList) {
+      if (department['value'] == this.roles['roleName']) {
+        return department['value']
+      }
+    }
+  }
+
+  updateRole() {
+    this.checkForId();
+    this.roleList = ROLES_List;
+    this.roles['selected'] = this.setDropdown();
+  }
+
+  saveRole(){
+    console.log("save", this.user['roleName']);
+    
+  }
 
 }

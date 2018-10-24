@@ -230,8 +230,6 @@
                   <option [ngValue]="undefined" disabled selected>Select Department</option>
                   <option *ngFor="let list of departmentList" [ngValue]="list['value']"> {{list['key']}}</option>
                 </select>
-                <!-- <input type="text" name="department" id="department" [(ngModel)]="user['department']" class="form-control" placeholder="Department"
-                  value="" #department="ngModel" required> -->
                 <div *ngIf="department.invalid && (department.dirty || department.touched)" class="alert alert-danger">
                   Select Department
                 </div>
