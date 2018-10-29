@@ -8,9 +8,6 @@ import { PROJECTMANAGERLIST, PROJECTSTATUS } from '../../../../assets/dropdowns/
 })
 export class ProjectcreationComponent implements OnInit {
 
-  deadlineDetails: boolean;
-  taskDetails: boolean;
-  projectDetails: boolean;
   statusList: any;
   isselect: boolean;
   project:any={};
@@ -23,7 +20,6 @@ export class ProjectcreationComponent implements OnInit {
   ngOnInit() {
     this.managerList=PROJECTMANAGERLIST;
     this.statusList=PROJECTSTATUS;
-    this.projectDetails=true;
   }
 
   setTeam(){
@@ -39,21 +35,8 @@ export class ProjectcreationComponent implements OnInit {
     this.selectedList=obj;
   }
 
-  setSelectTab(tab){
-    this.projectDetails = false;
-    this.taskDetails = false;
-    this.deadlineDetails = false;
-    console.log("inn", tab);
-    console.log();
-    if (tab == 'projectDetails') {
-      this.projectDetails = true;
-    }
-    if (tab == 'taskDetails') {
-      this.taskDetails = true;
-    }
-    if (tab == 'deadlineDetails') {
-      this.deadlineDetails = true;
-    }
+  saveProject(){
+    console.log("project",this.project);
+    
   }
-
 }

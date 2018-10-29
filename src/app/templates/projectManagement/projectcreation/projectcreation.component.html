@@ -1,26 +1,11 @@
-<div id='stages'>
-  <nav role='navigation' class="d-flex justify-content-center">
-    <ul class="nav nav-pills" id="pills-tab" role="tablist">
-      <li class="nav-item">
-        <a href="javascript:void(0)" (click)="setSelectTab('projectDetails')">Project Details</a>
-      </li>
-      <li class="nav-item">
-        <a href="javascript:void(0)" (click)="setSelectTab('taskDetails')">Task Details</a>
-      </li>
-      <li class="nav-item">
-        <a href="javascript:void(0)" (click)="setSelectTab('deadlineDetails')">Deadline Details</a>
-      </li>
-      <!-- <li class="nav-item">
-        <a href="javascript:void(0)">Other Details</a>
-      </li> -->
-    </ul>
-  </nav>
+<div id='heading'>
+  <h5>Project Creation</h5>
 </div>
 
 <div class="tab-content">
-  <div *ngIf="projectDetails">
+  <div>
     <div>
-      <form #parta="ngForm">
+      <form #projectCreation="ngForm">
         <div class="row inputbox">
           <div class="col-4">
             <label for="projectId" class="control-label">Project ID</label>
@@ -87,61 +72,22 @@
           </div>
           <div class="col-4">
             <div class="form-group ">
-              <label for="projectAssignedOn" class="control-label">Project Assigned Date</label>
-              <input type="date" id=projectAssignedOn name="projectAssignedOn" class="form-control" [(ngModel)]="project['projectAssignedOn']"
-                placeholder="Project Assigned Date" value="" #projectAssignedOn="ngModel" required>
-              <div *ngIf="projectAssignedOn.invalid && (projectAssignedOn.dirty || projectAssignedOn.touched)" class="alert alert-danger">
-                Select Assigned Date
+              <label for="projectStartingDate" class="control-label">Project Starting Date</label>
+              <input type="date" id=projectStartingDate name="projectStartingDate" class="form-control" [(ngModel)]="project['projectStartingDate']"
+                placeholder="Project Starting Date" value="" #projectStartingDate="ngModel" required>
+              <div *ngIf="projectStartingDate.invalid && (projectStartingDate.dirty || projectStartingDate.touched)" class="alert alert-danger">
+                Select Starting Date
               </div>
             </div>
           </div>
         </div>
-      </form>
-    </div>
-  </div>
-  <div *ngIf="taskDetails">
-    <div>
-      <form #parta="ngForm">
-        <div class="row inputbox">
-          <div class="col-3">
-            <label for="taskTitle" class="control-label">Task Title</label>
-            <input type="text" id="taskTitle" name="taskTitle" class="form-control" [(ngModel)]="task['taskTitle']" placeholder="Task Title"
-              value="" #taskTitle="ngModel" required>
-            <div *ngIf="taskTitle.invalid && (taskTitle.dirty || taskTitle.touched)" class="alert alert-danger">
-              Enter Task Title
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="form-group ">
-              <label for="taskDescription" class="control-label">Task Description</label>
-              <input type="text" id="taskDescription" name="taskDescription" class="form-control" [(ngModel)]="task['taskDescription']" placeholder="Task Description"
-                value="" #taskDescription="ngModel" required>
-              <div *ngIf="taskDescription.invalid && (taskDescription.dirty || taskDescription.touched)" class="alert alert-danger">
-                Enter Task Description
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="form-group ">
-              <label for="taskAssignbedTo" class="control-label">Assigned To</label>
-              <input type="text" id="taskAssignbedTo" name="taskAssignbedTo" class="form-control" [(ngModel)]="task['taskAssignbedTo']" placeholder="Task Assigned"
-                value="" #taskAssignbedTo="ngModel" required>
-              <div *ngIf="taskAssignbedTo.invalid && (taskAssignbedTo.dirty || taskAssignbedTo.touched)" class="alert alert-danger">
-                Enter Task Description
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
+        <section>
             <div class="d-inline mx-auto center">
-              <button  (click)="addTask()"  href="javascript:void(0)" class="btn btn-default btntheme">Save</button >
+              <button  class="btn btn-default btntheme" href="javascript:void(0)" [disabled]="projectCreation.invalid" (click)="saveProject()">Save</button >
             </div>
-          </div>
-        </div>
+          </section>
       </form>
     </div>
-  </div>
-  <div *ngIf="deadlineDetails">
-    <div></div>
   </div>
 </div>
 <app-select-team *ngIf="isselect" [isselect]="isselect" (isselectChange)="isselectChange($event)" (selectTeam)="selectedTeam($event)"></app-select-team>
