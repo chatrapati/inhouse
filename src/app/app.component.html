@@ -8,7 +8,7 @@
           </a>
         </li>
         <li class="sidebar-brand" id="sidebarTogglebtn">
-          <a href="javascript:void(0);" id="menu-toggle" (click)="toggleChange()" style="margin-top:10px;float:right;">
+          <a href="javascript:void(0);" id="menu-toggle" (click)="toggle = !toggle" style="margin-top:10px;float:right;">
             <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true"></i>
           </a>
         </li>
@@ -18,7 +18,7 @@
             <span style="margin-left:10px;">User Management
             </span>
           </a>
-          <ul class="sub-menu collapse" id="products" [ngClass]="{'show' : menutoggle }">
+          <ul class="sub-menu collapse" id="products" [ngClass]="{'hide' : menutoggle }">
             <li class="active">
               <a href="javascript:void(0);" [routerLink]="['/userDashboard']">User Dashboard</a>
             </li>
@@ -41,26 +41,12 @@
             </span>
           </a>
         </li>
-        <li data-toggle="collapse" data-target="#projects" class="collapsed active" (click)="menutoggle = !menutoggle">
+        <li>
           <a href="javascript:void(0);">
             <i class="fa fa-puzzle-piece" aria-hidden="true"> </i>
             <span style="margin-left:10px;">Project Management
             </span>
           </a>
-          <ul class="sub-menu collapse" id="projects" [ngClass]="{'hide' : menutoggle }">
-            <li class="active">
-              <a href="javascript:void(0);" [routerLink]="['/projectDashboard']">Project Dashboard</a>
-            </li>
-            <li>
-              <a href="javascript:void(0);" [routerLink]="['/projectCreation']">Project Creation</a>
-            </li>
-            <li>
-              <a href="javascript:void(0);" [routerLink]="['/projectAllocation']">Project Allocation</a>
-            </li>
-            <li>
-              <a href="javascript:void(0);" [routerLink]="['/roles']">Assign Project Task</a>
-            </li>
-          </ul>
         </li>
         <li>
           <a href="javascript:void(0);">

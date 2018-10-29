@@ -103,9 +103,6 @@
     color: #f15e30;
     font-weight: 600;
 }
-.inputbox .form-group{
-  margin-bottom: 1rem !important;
-}
 .d-inline.mx-auto.center {
   text-align:center!important;
   display:block!important;
@@ -128,4 +125,7 @@
 
 #pan{
   text-transform:uppercase;
+}
+.inputbox .form-group{
+  margin-bottom: 1rem !important;
 }

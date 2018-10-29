@@ -7,10 +7,6 @@
     float: right;
 }
 
-.float_none{
-    float: none;
-}
-
 .m_b_15{
     margin-bottom: 15px!important;
 }
@@ -49,19 +45,4 @@
     background-color: #c19841!important;
     color: #ffffff!important;
 }
-
-.btntheme{
-    background: #eb8035 !important;
-    color:#ffffff !important;
-    border:1px solid #eb8035 !important; 
-    border-radius: 0 !important;
-  }
-
-
-  
-  @media (min-width: 768px){
-    #wrapper.toggled #empTable i {
-        float: inherit !important;
-    }
-  }
 

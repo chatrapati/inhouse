@@ -273,10 +273,10 @@ border-radius: 0 !important;
   #wrapper.toggled #sidebar-wrapper {
       width: 40px;
   }
-  #wrapper.toggled #sidebar-wrapper span {
+  #wrapper.toggled span {
       visibility: hidden;
   }
-  #wrapper.toggled #sidebar-wrapper i {
+  #wrapper.toggled i {
       float: right;
   }
   #page-content-wrapper {
@@ -310,16 +310,16 @@ border-radius: 0 !important;
   #wrapper.toggled #sidebar-wrapper {
       width: 140px;
   }
-  #wrapper.toggled #sidebar-wrapper span {
+  #wrapper.toggled span {
       visibility: visible;
       position: relative;
       left: 70px;
       bottom: 13px;
   }
-  #wrapper #sidebar-wrapper span {
+  #wrapper span {
       visibility: hidden;
   }
-  #wrapper.toggled #sidebar-wrapper i {
+  #wrapper.toggled i {
       float: right;
   }
   #wrapper i {
@@ -538,33 +538,12 @@ border-radius: 0 !important;
   margin-top: 10px;
 }
 
-
-
 .itembox a:hover .hero1 {
   width: 90%;
   height: 250px;
   margin: auto;
   /* background-color: orange; */
   background: linear-gradient(#E14603,#C23507,#AE280D);
-}
-
-#projects li a:hover {
-  background: transparent !important;
-  border-bottom: 1.6px solid #020203;
-}
-
-#projects li a {
-  color: #f58736 !important;
-  font-size: .8rem !important;
-}
-
-#projects li {
-  margin-left: 10px;
-  margin-bottom: 12px !important;
-}
-
-#projects li:first-child {
-  margin-top: 10px;
 }
 
 .itembox a:hover .hero2 {
