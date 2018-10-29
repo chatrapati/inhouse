@@ -111,3 +111,171 @@ export const EMPLOYEELIST:any=[
     {empId:'GST/HYD/055',empName:'SAHITH',role:'DJANGO DEVELOPER'},
     {empId:'GST/HYD/056',empName:'NARESH',role:'ANGULAR DEVELOPER'}
 ]
+
+export const PROJECT_LIST:any=[
+    {
+        projectID:'PRJ00175',
+        projectName:'GEMS',
+        projectFullName:'GoldenSun Employee Management System',
+        projectVersion:1,
+        project_status:'Development',
+        projectStartingDate:''
+    },
+    {
+        projectID:'PRJ00125',
+        projectName:'SAANDESH',
+        projectFullName:'Saandesh',
+        projectVersion:1,
+        project_status:'Completed',
+        projectStartingDate:''
+    },
+    {
+        projectID:'PRJ00056',
+        projectName:'POWERTEX',
+        projectFullName:'Powertex Tools',
+        projectVersion:1,
+        project_status:'Hold',
+        projectStartingDate:''
+    },
+    {
+        projectID:'PRJ00057',
+        projectName:'POWERTEX v2',
+        projectFullName:'Powertex Tools',
+        projectVersion:2,
+        project_status:'Development',
+        projectStartingDate:''
+    }
+]
+
+export const TASK_LIST:any=[
+    {
+        projectID:'PRJ00175',
+        projectName:'GEMS',
+        projectFullName:'GoldenSun Employee Management System',
+        projectVersion:1,
+        project_status:'Development',
+        taskId:'Task#1',
+        taskTitle:'Design Dashboard UI',
+        assignedBy:"VIJAY",
+        assignedTo:"PRAVEEN",
+        assignedDate:"",
+        task_status:"Pending"
+    },
+    {
+        projectID:'PRJ00175',
+        projectName:'GEMS',
+        projectFullName:'GoldenSun Employee Management System',
+        projectVersion:1,
+        project_status:'Development',
+        taskId:'Task#10',
+        taskTitle:'Develop Dashboard Functionality',
+        assignedBy:"VIJAY",
+        assignedTo:"PRAVEEN",
+        assignedDate:"",
+        task_status:"Pending"
+    },
+    {
+        projectID:'PRJ00175',
+        projectName:'GEMS',
+        projectFullName:'GoldenSun Employee Management System',
+        projectVersion:1,
+        project_status:'Development',
+        taskId:'Task#11',
+        taskTitle:'Design Departents UI',
+        assignedBy:"VIJAY",
+        assignedTo:"PRAVEEN",
+        assignedDate:"",
+        task_status:"Pending"
+    },
+    {
+        projectID:'PRJ00175',
+        projectName:'GEMS',
+        projectFullName:'GoldenSun Employee Management System',
+        projectVersion:1,
+        project_status:'Development',
+        taskId:'Task#15',
+        taskTitle:'Develop Departents Functionality',
+        assignedBy:"VIJAY",
+        assignedTo:"PRAVEEN",
+        assignedDate:"",
+        task_status:"Pending"
+    },
+    {
+        projectID:'PRJ00125',
+        projectName:'SAANDESH',
+        projectFullName:'Saandesh',
+        projectVersion:1,
+        project_status:'Completed',
+        taskId:'Task#5',
+        taskTitle:'Design Dashboard UI',
+        assignedBy:"ASHOK",
+        assignedTo:"PRAVEEN",
+        assignedDate:"",
+        task_status:"Completed"
+    },
+    {
+        projectID:'PRJ00125',
+        projectName:'SAANDESH',
+        projectFullName:'Saandesh',
+        projectVersion:1,
+        project_status:'Completed',
+        taskId:'Task#6',
+        taskTitle:'Develop Dashboard Functionality',
+        assignedBy:"ASHOK",
+        assignedTo:"PRAVEEN",
+        assignedDate:"",
+        task_status:"Completed"
+    },
+    {
+        projectID:'PRJ00056',
+        projectName:'POWERTEX',
+        projectFullName:'Powertex Tools',
+        projectVersion:1,
+        project_status:'Hold',
+        taskId:'Task#25',
+        taskTitle:'Design Dashboard UI',
+        assignedBy:"SANJAY",
+        assignedTo:"NEELIMA",
+        assignedDate:"",
+        task_status:"Completed"
+    },
+    {
+        projectID:'PRJ00056',
+        projectName:'POWERTEX',
+        projectFullName:'Powertex Tools',
+        projectVersion:1,
+        project_status:'Hold',
+        taskId:'Task#26',
+        taskTitle:'Develop Dashboard Functionality',
+        assignedBy:"SANJAY",
+        assignedTo:"NEELIMA",
+        assignedDate:"",
+        task_status:"Completed"
+    },
+    {
+        projectID:'PRJ00057',
+        projectName:'POWERTEX v2',
+        projectFullName:'Powertex Tools',
+        projectVersion:2,
+        project_status:'Development',
+        taskId:'Task#47',
+        taskTitle:'Design Dashboard UI',
+        assignedBy:"SANJAY",
+        assignedTo:"SHIVA",
+        assignedDate:"",
+        task_status:"Pending"
+    },
+    {
+        projectID:'PRJ00057',
+        projectName:'POWERTEX v2',
+        projectFullName:'Powertex Tools',
+        projectVersion:2,
+        project_status:'Development',
+        taskId:'Task#45',
+        taskTitle:'Develop Dashboard Functionality',
+        assignedBy:"SANJAY",
+        assignedTo:"SHIVA",
+        assignedDate:"",
+        task_status:"Pending"
+    }
+]

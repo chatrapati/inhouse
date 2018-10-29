@@ -1,0 +1,62 @@
+<div class="modal backdrop" tabindex="-1" role="dialog" style="display: block">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="float: left;">Add Task</h4>
+        <button type="button" class="close" style="float:right" aria-label="Close" (click)="closeModalDialog()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #taskCreation="ngForm">
+          <div class="col-12 row">
+            <div class="col-4">
+              <label for="projectTitle" class="control-label">Project Title</label>
+            </div>
+            <div class="col-8 form-group">
+                <select class="form-control" name="projectTitle" id="projectTitle" [(ngModel)]="task['projectTitle']"
+                #projectTitle="ngModel" required>
+                <option [ngValue]="undefined" disabled selected>Select Project Title</option>
+                <option *ngFor="let list of projectList" [ngValue]="list['projectName']"> {{list['projectName']}}</option>
+              </select>
+              <div *ngIf="projectTitle.invalid && (projectTitle.dirty || projectTitle.touched)" class="alert alert-danger">
+                Select Project Title
+              </div>
+            </div>
+          </div>
+          <div class="col-12 row">
+            <div class="col-4">
+              <label for="taskTitle" class="control-label">Task Title</label>
+            </div>
+            <div class="col-8 form-group">
+              <input type="text" id="taskTitle" name="taskTitle" class="form-control" [(ngModel)]="task['taskTitle']" placeholder="Task Title"
+                value="" #taskTitle="ngModel" required>
+              <div *ngIf="taskTitle.invalid && (taskTitle.dirty || taskTitle.touched)" class="alert alert-danger">
+                Enter Task Title
+              </div>
+            </div>
+          </div>
+          <div class="col-12 row">
+            <div class="col-4">
+              <label for="taskDescription" class="control-label">Task Description</label>
+            </div>
+            <div class="col-8 form-group">
+              <!-- <textarea rows="4" cols="50">
+                      At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+                      </textarea> -->
+              <textarea rows="4" cols="50" id="taskDescription" name="taskDescription" class="form-control" [(ngModel)]="task['taskDescription']"
+                placeholder="Task Description" value="" #taskDescription="ngModel" required></textarea>
+              <div *ngIf="taskDescription.invalid && (taskDescription.dirty || taskDescription.touched)" class="alert alert-danger">
+                Enter Task Description
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btntheme_search" (click)="closeModalDialog()">Close</button>
+        <button type="button" class="btn btn-default btntheme_search" (click)="save()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

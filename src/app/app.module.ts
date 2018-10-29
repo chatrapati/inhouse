@@ -25,6 +25,7 @@ import { ProjectAllocationComponent } from './templates/projectManagement/projec
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SelectTeamComponent } from './templates/projectManagement/select-team/select-team.component';
+import { AddTaskComponent } from './templates/projectManagement/add-task/add-task.component';
 
 
 @NgModule({
@@ -44,8 +45,8 @@ import { SelectTeamComponent } from './templates/projectManagement/select-team/s
     ProjectDashboardComponent,
     ProjectcreationComponent,
     ProjectAllocationComponent,
-    SelectTeamComponent
-    
+    SelectTeamComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,

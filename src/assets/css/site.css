@@ -636,3 +636,7 @@ border-radius: 0 !important;
 .cursor{
   cursor: pointer;
 }
+
+textarea{
+  resize: none !important;
+}
