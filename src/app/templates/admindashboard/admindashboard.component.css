@@ -126,10 +126,10 @@
     #wrapper.toggled #sidebar-wrapper {
         width: 40px;
     }
-    #wrapper.toggled span {
+    #wrapper.toggled #sidebar-wrapper span {
         visibility: hidden;
     }
-    #wrapper.toggled i {
+    #wrapper.toggled #sidebar-wrapper i {
         float: right;
     }
     #page-content-wrapper {
@@ -163,19 +163,19 @@
     #wrapper.toggled #sidebar-wrapper {
         width: 140px;
     }
-    #wrapper.toggled span {
+    #wrapper.toggled #sidebar-wrapper span {
         visibility: visible;
         position: relative;
         left: 70px;
         bottom: 13px;
     }
-    #wrapper span {
+    #wrapper #sidebar-wrapper span {
         visibility: hidden;
     }
-    #wrapper.toggled i {
+    #wrapper.toggled #sidebar-wrapper i {
         float: right;
     }
-    #wrapper i {
+    #wrapper #sidebar-wrapper i {
         float: right;
     }
     #page-content-wrapper {

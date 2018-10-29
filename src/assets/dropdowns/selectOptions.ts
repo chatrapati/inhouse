@@ -75,3 +75,39 @@ export const QUALIFICATION_LIST:any=[
     {key:"Other", value:"Other"}
     
 ]
+
+export const PROJECTSTATUS:any=[
+    {key:'Planning',value:'Planning'},
+    {key:'Analysis',value:'Analysis'},
+    {key:'Design',value:'Design'},
+    {key:'Development',value:'Development'},
+    {key:'Integration And Testing',value:'Integrationandtesting'},
+    {key:'Implementation',value:'Implementation'},
+    {key:'Maintenance',value:'Maintenance'}
+]
+
+export const PROJECTMANAGERLIST:any=[
+    {empId:'GST/HYD/010',empName:'ASHOK',role:'PROJECT MANAGER'},
+    {empId:'GST/HYD/011',empName:'VIJAY',role:'PROJECT MANAGER'},
+    {empId:'GST/HYD/012',empName:'SANJAY',role:'PROJECT MANAGER'},
+    {empId:'GST/HYD/013',empName:'SHEKHAR',role:'PROJECT MANAGER'},
+]
+
+export const EMPLOYEELIST:any=[
+    {empId:'GST/HYD/100',empName:'PRAVEEN',role:'ANGULAR DEVELOPER'},
+    {empId:'GST/HYD/102',empName:'SHIVA',role:'ANGULAR DEVELOPER'},
+    {empId:'GST/HYD/020',empName:'SRINIVAS',role:'UI DEVELOPER'},
+    {empId:'GST/HYD/002',empName:'SANTOSH',role:'ANGULAR DEVELOPER'},
+    {empId:'GST/HYD/045',empName:'NEELIMA',role:'ANGULAR DEVELOPER'},
+    {empId:'GST/HYD/046',empName:'GAYATHRI',role:'ANGULAR DEVELOPER'},
+    {empId:'GST/HYD/047',empName:'RAHUL',role:'DJANGO DEVELOPER'},
+    {empId:'GST/HYD/048',empName:'LAKSHMI',role:'UI DEVELOPER'},
+    {empId:'GST/HYD/049',empName:'VENKAT',role:'MOBILE DEVELOPER'},
+    {empId:'GST/HYD/050',empName:'LALITHA',role:'.NET DEVELOPER'},
+    {empId:'GST/HYD/051',empName:'NAGARAJU',role:'.NET DEVELOPER'},
+    {empId:'GST/HYD/052',empName:'KOTI',role:'UIX DESIGNER'},
+    {empId:'GST/HYD/053',empName:'RADHIKA',role:'PYTHON DEVELOPER'},
+    {empId:'GST/HYD/054',empName:'SWAMI',role:'ANGULAR DEVELOPER'},
+    {empId:'GST/HYD/055',empName:'SAHITH',role:'DJANGO DEVELOPER'},
+    {empId:'GST/HYD/056',empName:'NARESH',role:'ANGULAR DEVELOPER'}
+]
