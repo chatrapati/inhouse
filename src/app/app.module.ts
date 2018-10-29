@@ -19,7 +19,12 @@ import { HrmanagementComponent } from './templates/hrmanagement/hrmanagement.com
 import { EmployeeListComponent } from './templates/employee-list/employee-list.component';
 import { EditUserComponent } from './templates/edit-user/edit-user.component';
 import { Iemployee,Employee } from './templates/employee-list/employee';
-
+import { ProjectDashboardComponent } from './templates/projectManagement/project-dashboard/project-dashboard.component';
+import { ProjectcreationComponent } from './templates/projectManagement/projectcreation/projectcreation.component';
+import { ProjectAllocationComponent } from './templates/projectManagement/project-allocation/project-allocation.component';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SelectTeamComponent } from './templates/projectManagement/select-team/select-team.component';
 
 
 @NgModule({
@@ -35,7 +40,11 @@ import { Iemployee,Employee } from './templates/employee-list/employee';
     RolesComponent,
     HrmanagementComponent,
     EmployeeListComponent,
-    EditUserComponent
+    EditUserComponent,
+    ProjectDashboardComponent,
+    ProjectcreationComponent,
+    ProjectAllocationComponent,
+    SelectTeamComponent
     
   ],
   imports: [
@@ -43,7 +52,9 @@ import { Iemployee,Employee } from './templates/employee-list/employee';
     ChartsModule,
     FormsModule,
     routing,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    BootstrapModalModule.forRoot({container:document.body}),
   ],
   providers: [Employee],
   bootstrap: [AppComponent]

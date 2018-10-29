@@ -1,31 +1,57 @@
 <div class="col-12">
-  <table class="table table-striped m_b_15">
+  <a [routerLink]="['/userDashboard']">back to Dashboard</a>
+  <table class="table table-striped m_b_15" id="empTable">
       <thead>
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">NAME</th>
-          <th scope="col">DESIGNATION</th>
-          <!-- <th scope="col">DEPARTMENT</th>
-          <th scope="col">MAIL(OFFICIAL)</th> -->
+          <th scope="col">
+            <input type="text" id="empId" name="empId" class="form-control" [(ngModel)]="empId" placeholder="Employee ID" value="">
+          </th>
+          <th scope="col">
+              <input type="text" id="empName" name="empName" class="form-control" [(ngModel)]="empName" placeholder="Employee Name" value="">
+          </th>
+          <th scope="col">
+              <select class="form-control gendercontrol" name="designation" id="designation" [(ngModel)]="designation">
+              <option [ngValue]="undefined" disabled selected>Select Designation</option>
+              <option *ngFor="let list of rolesList" [ngValue]="list['value']"> {{list['key']}}</option>
+            </select>
+          </th>
+          <th scope="col">
+              <select class="form-control gendercontrol" name="department" id="department" [(ngModel)]="department">
+              <option [ngValue]="undefined" disabled selected>Select Department</option>
+              <option *ngFor="let list of departmentList" [ngValue]="list['value']"> {{list['key']}}</option>
+            </select>
+          </th>
+          <!-- <th scope="col">MAIL(OFFICIAL)</th> -->
           <!-- <th scope="col">CONTACT</th> -->
-          <th class="align_center" scope="col">ACTIONS</th>
+          <th class="align_center" scope="col">
+              <button  (click)="search()"  href="javascript:void(0)" class="btn btn-default btntheme">Search</button >
+          </th>
         </tr>
       </thead>
       <tbody>
+          <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NAME</th>
+              <th scope="col">DESIGNATION</th>
+              <th scope="col">DEPARTMENT</th>
+              <!-- <th scope="col">MAIL(OFFICIAL)</th> -->
+              <!-- <th scope="col">CONTACT</th> -->
+              <th class="align_center" scope="col">ACTIONS</th>
+            </tr>
         <tr *ngFor="let emp of empList">
          
           <td>{{emp['empId']}}</td>
           <td>{{emp['empName']}} {{emp['surName']}}</td>
           <td>{{emp['designation']}}</td>
-          <!-- <td>{{emp['department']}}</td>
+          <td>{{emp['department']}}</td>
           
-          <td>{{emp['mail']}}</td> -->
+          <!-- <td>{{emp['mail']}}</td> -->
           <!-- <td>{{emp['contact']}}</td> -->
           <td class="align_center">
-            <div>
-                <i class="fa fa-pencil m_r_5 cursor" aria-hidden="true" (click)="editEvent(emp)"></i>
-                <i class="fa fa-trash-o cursor" aria-hidden="true" (click)="showConfirm(event)" ></i>
-            </div>
+            <!-- <div> -->
+                <i class="fa fa-pencil m_r_5 float_none cursor" aria-hidden="true" (click)="editEvent(emp)"></i>
+                <i class="fa fa-trash-o float_none cursor" aria-hidden="true" (click)="showConfirm(event)" ></i>
+            <!-- </div> -->
           </td>
         </tr>
         <tr *ngIf="totalRecords==0"><td colspan="6" style="text-align: center;">No Records Found</td></tr>

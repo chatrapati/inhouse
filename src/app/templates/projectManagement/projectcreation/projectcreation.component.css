@@ -106,6 +106,7 @@
 .inputbox .form-group{
   margin-bottom: 1rem !important;
 }
+
 .d-inline.mx-auto.center {
   text-align:center!important;
   display:block!important;
@@ -117,15 +118,4 @@
   border:1px solid #eb8035 !important; 
   margin-left: 2rem;
   border-radius: 0 !important;
-}
-.gendercontrol{
-  border-radius: 0 !important;
-  border-bottom:1px solid #eb8035 !important; 
-  border-left:0 !important;
-  border-top:0 !important;
-  border-right:0 !important;
-}
-
-#pan{
-  text-transform:uppercase;
 }
