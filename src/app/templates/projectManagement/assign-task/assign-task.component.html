@@ -37,11 +37,11 @@
                 <div class="col-4">
                   <label for="taskDescription" class="control-label">Assign Task</label>
                 </div>
-                <div class="col-8 form-group">
+                <div class="col-6 form-group">
                     <select class="form-control gendercontrol" name="assignedTo" id="assignedTo" [(ngModel)]="task['assignedTo']"
                     #assignedTo="ngModel" required>
                     <option [ngValue]="undefined" disabled selected>Select Project Status</option>
-                    <option *ngFor="let list of statusList" [ngValue]="list['value']"> {{list['key']}}</option>
+                    <option *ngFor="let list of employeeList" [ngValue]="list['empName']"> {{list['empName']}}</option>
                   </select>
                   <div *ngIf="assignedTo.invalid && (assignedTo.dirty || assignedTo.touched)" class="alert alert-danger">
                     Select Assigned Person
@@ -52,7 +52,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default btntheme_search" (click)="closeModalDialog()">Close</button>
-          <button type="button" class="btn btn-default btntheme_search" (click)="save()">Save</button>
+          <button type="button" class="btn btn-default btntheme_search" [disabled]="taskAssigning.invalid" (click)="save()">Save</button>
         </div>
       </div>
     </div>

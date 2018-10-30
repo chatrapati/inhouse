@@ -9,6 +9,7 @@ import { PROJECT_LIST, EMPLOYEELIST } from '../../../../assets/dropdowns/selecto
 })
 export class AssignTaskComponent implements OnInit {
 
+  employeeList: any;
   projectList: any={};
   task:any={};
 
@@ -20,7 +21,7 @@ export class AssignTaskComponent implements OnInit {
 
   ngOnInit() {
     console.log("selectedTask", this.selectedTask);
-    
+    this.employeeList=EMPLOYEELIST;
     this.projectList=PROJECT_LIST;
     this.task=this.selectedTask;
   }
