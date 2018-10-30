@@ -28,6 +28,7 @@ import { SelectTeamComponent } from './templates/projectManagement/select-team/s
 import { AddTaskComponent } from './templates/projectManagement/add-task/add-task.component';
 import { AssignTaskComponent } from './templates/projectManagement/assign-task/assign-task.component';
 import { ViewTaskComponent } from './templates/projectManagement/view-task/view-task.component';
+import { ConfirmComponent } from '../assets/others/confirm.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { ViewTaskComponent } from './templates/projectManagement/view-task/view-
     SelectTeamComponent,
     AddTaskComponent,
     AssignTaskComponent,
-    ViewTaskComponent
+    ViewTaskComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +62,9 @@ import { ViewTaskComponent } from './templates/projectManagement/view-task/view-
     ReactiveFormsModule,
     BrowserAnimationsModule,
     BootstrapModalModule.forRoot({container:document.body}),
+  ],
+  entryComponents: [
+    ConfirmComponent
   ],
   providers: [Employee],
   bootstrap: [AppComponent]

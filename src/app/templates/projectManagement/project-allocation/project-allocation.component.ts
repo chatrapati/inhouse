@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PROJECTMANAGERLIST, EMPLOYEELIST, PROJECT_LIST, TASK_LIST } from '../../../../assets/dropdowns/selectoptions';
+import { DialogService } from 'ng2-bootstrap-modal';
+import { ConfirmComponent } from '../../../../assets/others/confirm.component';
 
 @Component({
   selector: 'app-project-allocation',
@@ -16,7 +18,7 @@ export class ProjectAllocationComponent implements OnInit {
   projectList: any;
   employeeList: any;
   managerList: any;
-  constructor() { }
+  constructor(private dialogService:DialogService,) { }
 
   ngOnInit() {
     this.managerList=PROJECTMANAGERLIST;
@@ -56,6 +58,27 @@ export class ProjectAllocationComponent implements OnInit {
 
   isselectViewChange(event){
     this.isViewTask=event;
+  }
+
+  showConfirm(task) {
+    // this.id=event['_id'];
+    console.log("innnn", task);
+    
+    let disposable = this.dialogService.addDialog(ConfirmComponent, {
+      title:'Delete Confirmation', 
+      message:'Are you sure you want to delete this record ?'})
+      .subscribe((isConfirmed)=>{
+          if(isConfirmed) {
+            // Method call for deleting schedule
+            this.deleteTask(task);
+          }
+          else {
+          }
+      });
+    }
+
+  deleteTask(task){
+    console.log("task == >",task);
   }
 
 }
