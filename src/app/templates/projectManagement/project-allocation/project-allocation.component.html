@@ -104,3 +104,4 @@
   </table>
 </div>
 <app-add-task *ngIf="isAddTask" [isselect]="isAddTask" (isselectChange)="isselectChange($event)"></app-add-task>
+<app-assign-task *ngIf="isAssignTask" [isselect]="isAssignTask" [selectedTask]="selectedTask" (isselectChange)="isselectAssignChange($event)"></app-assign-task>

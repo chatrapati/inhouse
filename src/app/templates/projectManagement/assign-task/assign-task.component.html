@@ -1,0 +1,59 @@
+<div class="modal backdrop" tabindex="-1" role="dialog" style="display: block">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="float: left;">Assign Task</h4>
+          <button type="button" class="close" style="float:right" aria-label="Close" (click)="closeModalDialog()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #taskAssigning="ngForm">
+            <div class="col-12 row">
+              <div class="col-4">
+                <label for="projectTitle" class="control-label">Project Title</label>
+              </div>
+              <div class="col-8 form-group">
+                {{task['projectName']}}
+              </div>
+            </div>
+            <div class="col-12 row">
+              <div class="col-4">
+                <label for="taskTitle" class="control-label">Task Title</label>
+              </div>
+              <div class="col-8 form-group">
+                {{task['taskTitle']}}
+              </div>
+            </div>
+            <div class="col-12 row">
+              <div class="col-4">
+                <label for="taskDescription" class="control-label">Task Description</label>
+              </div>
+              <div class="col-8 form-group">
+                {{task['taskDescription']}}
+              </div>
+            </div>
+            <div class="col-12 row">
+                <div class="col-4">
+                  <label for="taskDescription" class="control-label">Assign Task</label>
+                </div>
+                <div class="col-8 form-group">
+                    <select class="form-control gendercontrol" name="assignedTo" id="assignedTo" [(ngModel)]="task['assignedTo']"
+                    #assignedTo="ngModel" required>
+                    <option [ngValue]="undefined" disabled selected>Select Project Status</option>
+                    <option *ngFor="let list of statusList" [ngValue]="list['value']"> {{list['key']}}</option>
+                  </select>
+                  <div *ngIf="assignedTo.invalid && (assignedTo.dirty || assignedTo.touched)" class="alert alert-danger">
+                    Select Assigned Person
+                  </div>
+                </div>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btntheme_search" (click)="closeModalDialog()">Close</button>
+          <button type="button" class="btn btn-default btntheme_search" (click)="save()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
