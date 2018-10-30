@@ -29,6 +29,10 @@ import { AddTaskComponent } from './templates/projectManagement/add-task/add-tas
 import { AssignTaskComponent } from './templates/projectManagement/assign-task/assign-task.component';
 import { ViewTaskComponent } from './templates/projectManagement/view-task/view-task.component';
 import { ConfirmComponent } from '../assets/others/confirm.component';
+import { TaskAllocationComponent } from './templates/projectManagement/task-allocation/task-allocation.component';
+import { ViewProjectComponent } from './templates/projectManagement/view-project/view-project.component';
+import { AssignProjectComponent } from './templates/projectManagement/assign-project/assign-project.component';
+import { Project } from './templates/projectManagement/project';
 
 
 @NgModule({
@@ -52,7 +56,10 @@ import { ConfirmComponent } from '../assets/others/confirm.component';
     AddTaskComponent,
     AssignTaskComponent,
     ViewTaskComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    TaskAllocationComponent,
+    ViewProjectComponent,
+    AssignProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,7 @@ import { ConfirmComponent } from '../assets/others/confirm.component';
   entryComponents: [
     ConfirmComponent
   ],
-  providers: [Employee],
+  providers: [Employee, Project],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

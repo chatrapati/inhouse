@@ -119,7 +119,8 @@ export const PROJECT_LIST:any=[
         projectFullName:'GoldenSun Employee Management System',
         projectVersion:1,
         project_status:'Development',
-        projectStartingDate:''
+        projectStartingDate:'',
+        projectManager:'VIJAY'
     },
     {
         projectID:'PRJ00125',
@@ -127,7 +128,8 @@ export const PROJECT_LIST:any=[
         projectFullName:'Saandesh',
         projectVersion:1,
         project_status:'Completed',
-        projectStartingDate:''
+        projectStartingDate:'',
+        projectManager:'ASHOK'
     },
     {
         projectID:'PRJ00056',
@@ -135,7 +137,8 @@ export const PROJECT_LIST:any=[
         projectFullName:'Powertex Tools',
         projectVersion:1,
         project_status:'Hold',
-        projectStartingDate:''
+        projectStartingDate:'',
+        projectManager:'SANJAY'
     },
     {
         projectID:'PRJ00057',
@@ -143,7 +146,8 @@ export const PROJECT_LIST:any=[
         projectFullName:'Powertex Tools',
         projectVersion:2,
         project_status:'Development',
-        projectStartingDate:''
+        projectStartingDate:'',
+        projectManager:'SANJAY'
     }
 ]
 

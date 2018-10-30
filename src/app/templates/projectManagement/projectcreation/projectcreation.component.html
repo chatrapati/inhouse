@@ -8,10 +8,10 @@
       <form #projectCreation="ngForm">
         <div class="row inputbox">
           <div class="col-4">
-            <label for="projectId" class="control-label">Project ID</label>
-            <input type="text" id="projectId" name="projectId" class="form-control" [(ngModel)]="project['projectId']" placeholder="Project ID"
-              value="" #projectId="ngModel" required>
-            <div *ngIf="projectId.invalid && (projectId.dirty || projectId.touched)" class="alert alert-danger">
+            <label for="projectID" class="control-label">Project ID</label>
+            <input type="text" id="projectID" name="projectID" class="form-control" [(ngModel)]="project['projectID']" placeholder="Project ID"
+              value="" #projectID="ngModel" required>
+            <div *ngIf="projectID.invalid && (projectID.dirty || projectID.touched)" class="alert alert-danger">
               Enter Project ID
             </div>
           </div>
@@ -37,30 +37,8 @@
           </div>
           <div class="col-4">
             <div class="form-group ">
-              <label for="projectManager" class="control-label">Project Manager</label>
-              <select class="form-control gendercontrol" name="projectManager" id="projectManager" [(ngModel)]="project['projectManager']"
-                #projectManager="ngModel" required>
-                <option [ngValue]="undefined" disabled selected>Select Project Manager</option>
-                <option *ngFor="let list of managerList" [ngValue]="list"> {{list['empName']}}</option>
-              </select>
-              <div *ngIf="projectManager.invalid && (projectManager.dirty || projectManager.touched)" class="alert alert-danger">
-                Select Project Manager
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="form-group ">
-              <label for="projectTeam" class="control-label">Project Team</label>
-              <div class="cursor">
-                <a (click)="setTeam()">Select Team</a>
-              </div>
-              <p *ngIf="selectedList['length']">{{selectedList['length']}} persons selected</p>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="form-group ">
               <label for="projectStatus" class="control-label">Project Status</label>
-              <select class="form-control gendercontrol" name="projectStatus" id="projectStatus" [(ngModel)]="project['projectStatus']"
+              <select class="form-control gendercontrol" name="projectStatus" id="projectStatus" [(ngModel)]="project['project_status']"
                 #projectStatus="ngModel" required>
                 <option [ngValue]="undefined" disabled selected>Select Project Status</option>
                 <option *ngFor="let list of statusList" [ngValue]="list['value']"> {{list['key']}}</option>

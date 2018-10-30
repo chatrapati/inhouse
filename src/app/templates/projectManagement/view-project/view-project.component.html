@@ -1,0 +1,75 @@
+<div class="modal backdrop" tabindex="-1" role="dialog" style="display: block">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="float: left;">View Project</h4>
+        <button type="button" class="close" style="float:right" aria-label="Close" (click)="closeModalDialog()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #projectView="ngForm">
+          <div class="col-12 row">
+            <div class="col-4">
+              <label for="projectID" class="control-label">Project ID</label>
+            </div>
+            <div class="col-8 form-group">
+              {{project['projectID']}}
+            </div>
+          </div>
+          <div class="col-12 row">
+            <div class="col-4">
+              <label for="projectTitle" class="control-label">Project Name</label>
+            </div>
+            <div class="col-8 form-group">
+              {{project['projectName']}}
+            </div>
+          </div>
+          <div class="col-12 row">
+            <div class="col-4">
+              <label for="projectFullName" class="control-label">Project FullName</label>
+            </div>
+            <div class="col-8 form-group">
+              {{project['projectFullName']}}
+            </div>
+          </div>
+          <div class="col-12 row">
+            <div class="col-4">
+              <label for="projectVersion" class="control-label">Project Version</label>
+            </div>
+            <div class="col-8 form-group">
+              {{project['projectVersion']}}
+            </div>
+          </div>
+          <div class="col-12 row">
+            <div class="col-4">
+              <label for="projectManager" class="control-label">Project Manager</label>
+            </div>
+            <div class="col-8 form-group">
+              {{project['projectManager']}}
+            </div>
+          </div>
+          <div class="col-12 row">
+            <div class="col-4">
+              <label for="projectStartingDate" class="control-label">Starting Date</label>
+            </div>
+            <div class="col-8 form-group">
+              {{project['projectStartingDate']}}
+            </div>
+          </div>
+          <div class="col-12 row">
+            <div class="col-4">
+              <label for="project_status" class="control-label">Project Status</label>
+            </div>
+            <div class="col-8 form-group">
+              {{project['project_status']}}
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btntheme_search" (click)="closeModalDialog()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

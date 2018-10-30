@@ -11,6 +11,8 @@ import { EditUserComponent } from './templates/edit-user/edit-user.component';
 import { ProjectDashboardComponent } from './templates/projectManagement/project-dashboard/project-dashboard.component';
 import { ProjectcreationComponent } from './templates/projectManagement/projectcreation/projectcreation.component';
 import { ProjectAllocationComponent } from './templates/projectManagement/project-allocation/project-allocation.component';
+import { TaskAllocationComponent } from './templates/projectManagement/task-allocation/task-allocation.component';
+import { AssignProjectComponent } from './templates/projectManagement/assign-project/assign-project.component';
 
 export const appRoutes: Routes = [
     { path: 'login', component: LoginComponent},
@@ -24,7 +26,9 @@ export const appRoutes: Routes = [
     { path:'editEmployee', component:EditUserComponent },
     { path:'projectDashboard', component:ProjectDashboardComponent},
     { path:'projectCreation', component:ProjectcreationComponent},
+    { path:'projectAllotment', component:AssignProjectComponent},
     { path:'projectAllocation', component:ProjectAllocationComponent},
+    { path:'taskAllocation', component:TaskAllocationComponent},
     { path: '**', redirectTo: 'userDashboard', pathMatch: 'full' }
   ];
 

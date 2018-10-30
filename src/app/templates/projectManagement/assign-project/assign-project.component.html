@@ -1,0 +1,111 @@
+<div id='heading'>
+  <h5>Project Allotment</h5>
+</div>
+
+<div class="tab-content">
+  <div>
+    <div>
+      <form #projectallotment="ngForm">
+
+        <div class="row inputbox">
+          <div class="col-12 row">
+            <div class="col-4 form-group">
+              <label for="projectID" class="control-label">Project ID</label>
+            </div>
+            <div class="col-8 form-group">
+              {{project['projectID']}}
+            </div>
+          </div>
+          <div class="col-12 row">
+            <div class="col-4 form-group">
+              <label for="projectName" class="control-label">Project Name</label>
+            </div>
+            <div class="col-8 form-group">
+              {{project['projectName']}}
+            </div>
+          </div>
+          <div class="col-12 row ">
+            <div class="col-4 form-group">
+              <label for="projectFullName" class="control-label">Project FullName</label>
+            </div>
+            <div class="col-8 form-group">
+              {{project['projectFullName']}}
+            </div>
+          </div>
+          <div class="col-12 row ">
+            <div class="col-4 form-group">
+              <label for="projectManager" class="control-label">Project Manager</label>
+            </div>
+            <div class="col-8 form-group">
+              <select class="form-control gendercontrol col-6" name="projectManager" id="projectManager" [(ngModel)]="project['projectManager']"
+                #projectManager="ngModel" required>
+                <option [ngValue]="undefined" disabled selected>Select Project Manager</option>
+                <option *ngFor="let list of managerList" [ngValue]="list['empName']"> {{list['empName']}}</option>
+              </select>
+              <div *ngIf="projectManager.invalid && (projectManager.dirty || projectManager.touched)" class="alert alert-danger col-6">
+                Select Project Manager
+              </div>
+            </div>
+          </div>
+          <div class="col-12 row ">
+            <div class="col-4 form-group">
+              <label for="projectTeam" class="control-label">Project Team</label>
+            </div>
+            <div class="col-8 form-group">
+              <div class="cursor">
+                <a href="javascript:void(0)" (click)="setTeam()">Select Team</a>
+              </div>
+              <p *ngIf="selectedList['length']">{{selectedList['length']}} persons selected</p>
+            </div>
+          </div>
+          <div class="col-12 row ">
+            <div class="col-4 form-group">
+              <label for="projectStatus" class="control-label">Project Status</label>
+            </div>
+            <div class="col-8 form-group">
+              <select class="form-control gendercontrol col-6" name="projectStatus" id="projectStatus" [(ngModel)]="project['project_status']"
+                #projectStatus="ngModel" required>
+                <option [ngValue]="undefined" disabled selected>Select Project Status</option>
+                <option *ngFor="let list of statusList" [ngValue]="list['value']"> {{list['key']}}</option>
+              </select>
+              <div *ngIf="projectStatus.invalid && (projectStatus.dirty || projectStatus.touched)" class="alert alert-danger col-6">
+                Select Project Status
+              </div>
+            </div>
+          </div>
+          <div class="col-12 row ">
+            <div class="col-4 form-group">
+              <label for="projectStartingDate" class="control-label">Project Starting Date</label>
+            </div>
+            <div class="col-8 form-group">
+              <input type="date" id=projectStartingDate name="projectStartingDate" class="form-control col-6" [(ngModel)]="project['projectStartingDate']"
+                placeholder="Project Starting Date" value="" #projectStartingDate="ngModel" required>
+              <div *ngIf="projectStartingDate.invalid && (projectStartingDate.dirty || projectStartingDate.touched)" class="alert alert-danger col-6">
+                Select Starting Date
+              </div>
+            </div>
+          </div>
+          <div class="col-12 row ">
+            <div class="col-4 form-group">
+              <label for="projectEndingDate" class="control-label">Project Ending Date</label>
+            </div>
+            <div class="col-8 form-group">
+              <input type="date" id=projectEndingDate name="projectEndingDate" class="form-control col-6" [(ngModel)]="project['projectEndingDate']"
+                placeholder="Project Ending Date" value="" #projectEndingDate="ngModel" required>
+              <div *ngIf="projectEndingDate.invalid && (projectEndingDate.dirty || projectEndingDate.touched)" class="alert alert-danger col-6">
+                Select Ending Date
+              </div>
+            </div>
+          </div>
+        </div>
+        <section>
+          <div class="d-inline mx-auto center">
+            <a class="btn btn-default btntheme" href="javascript:void(0)" [routerLink]="['/projectAllocation']">Back</a>
+            <button class="btn btn-default btntheme" href="javascript:void(0)" [disabled]="projectallotment.invalid" (click)="saveProject()">Save</button>
+          </div>
+        </section>
+      </form>
+    </div>
+  </div>
+</div>
+<app-select-team *ngIf="isselect" [isselect]="isselect" (isselectChange)="isselectChange($event)" (selectTeam)="selectedTeam($event)"></app-select-team>

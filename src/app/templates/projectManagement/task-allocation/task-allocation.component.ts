@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { PROJECTMANAGERLIST, EMPLOYEELIST, PROJECT_LIST, TASK_LIST, PROJECTSTATUS } from '../../../../assets/dropdowns/selectoptions';
+import { PROJECTMANAGERLIST, EMPLOYEELIST, PROJECT_LIST, TASK_LIST } from '../../../../assets/dropdowns/selectoptions';
 import { DialogService } from 'ng2-bootstrap-modal';
 import { ConfirmComponent } from '../../../../assets/others/confirm.component';
-import { Project } from '../project';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-project-allocation',
-  templateUrl: './project-allocation.component.html',
-  styleUrls: ['./project-allocation.component.css']
+  selector: 'app-task-allocation',
+  templateUrl: './task-allocation.component.html',
+  styleUrls: ['./task-allocation.component.css']
 })
-export class ProjectAllocationComponent implements OnInit {
+export class TaskAllocationComponent implements OnInit {
 
-  projectStatusList: any={};
-  isViewProject: boolean=false;
+  isViewTask: boolean=false;
   selectedTask: any={};
   isAssignTask: boolean=false;
   isAddTask: boolean=false;
@@ -21,27 +18,29 @@ export class ProjectAllocationComponent implements OnInit {
   projectList: any;
   employeeList: any;
   managerList: any;
-  constructor(private dialogService:DialogService, private router:Router, private project:Project) { }
+
+  constructor(private dialogService:DialogService) { }
 
   ngOnInit() {
     this.managerList=PROJECTMANAGERLIST;
     this.employeeList=EMPLOYEELIST;
     this.projectList=PROJECT_LIST;
     this.taskList=TASK_LIST;
-    this.projectStatusList=PROJECTSTATUS;
   }
 
-  assignProject(project){
-    console.log("project == >",project);
-    this.project.setEmployee(project);
-    this.router.navigateByUrl('/projectAllotment');
+  assignTask(task){
+    console.log("task == >",task);
+    this.isAssignTask=true;
+    this.selectedTask=task;
   }
- 
 
+  addTask(){
+    this.isAddTask=true;
+  }
 
-  viewProject(task){
+  viewTask(task){
     console.log("task == >", task);
-    this.isViewProject=true;
+    this.isViewTask=true;
     this.selectedTask=task;
   }
 
@@ -59,12 +58,12 @@ export class ProjectAllocationComponent implements OnInit {
   }
 
   isselectViewChange(event){
-    this.isViewProject=event;
+    this.isViewTask=event;
   }
 
-  showConfirm(project) {
+  showConfirm(task) {
     // this.id=event['_id'];
-    console.log("innnn", project);
+    console.log("innnn", task);
     
     let disposable = this.dialogService.addDialog(ConfirmComponent, {
       title:'Delete Confirmation', 
@@ -72,15 +71,15 @@ export class ProjectAllocationComponent implements OnInit {
       .subscribe((isConfirmed)=>{
           if(isConfirmed) {
             // Method call for deleting schedule
-            this.deleteProject(project);
+            this.deleteTask(task);
           }
           else {
           }
       });
     }
 
-    deleteProject(project){
-    console.log("project == >",project);
+  deleteTask(task){
+    console.log("task == >",task);
   }
 
 }

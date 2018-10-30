@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  #heading {
+    border-bottom: 2px solid #f89e45;
+    padding-bottom: 20px;
+    margin-left: 11px;
+    margin-right: 3px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #eb8035
+  } 
+  
+  .btntheme_search{
+    padding: 5px 10px !important;
+    background: #eb8035 !important;
+    color:#ffffff !important;
+    border:1px solid #eb8035 !important; 
+    border-radius: 5px !important;
+  }
+
+  .d-inline.mx-auto.right {
+    padding-bottom: 20px;
+    text-align:right!important;
+    display:block!important;
+  }

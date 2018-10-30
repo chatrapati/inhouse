@@ -3,14 +3,12 @@
 </div>
 
 <div>
-  <div class="d-inline mx-auto right">
-    <button class="btn btn-default btntheme_search" href="javascript:void(0)" (click)="addTask()">Add Task</button>
-  </div>
+  
   <table class="table table-striped m_b_15" id="projectTable">
     <thead>
       <tr>
         <th scope="col">
-          <input type="text" id="taskId" name="taskId" class="form-control" [(ngModel)]="taskId" placeholder="Task ID" value="">
+          <input type="text" id="projectId" name="projectId" class="form-control" [(ngModel)]="projectId" placeholder="Project ID" value="">
         </th>
         <th scope="col">
           <select class="form-control gendercontrol" name="ProjectTitle" id="ProjectTitle" [(ngModel)]="ProjectTitle">
@@ -19,27 +17,21 @@
           </select>
         </th>
         <th scope="col">
-          <input type="text" id="taskTitle" name="taskTitle" class="form-control" [(ngModel)]="taskTitle" placeholder="Task Title"
-            value="">
+            <select class="form-control gendercontrol" name="projectManager" id="projectManager" [(ngModel)]="projectManager">
+            <option [ngValue]="undefined" disabled selected>Project Manager</option>
+            <option *ngFor="let list of managerList" [ngValue]="list"> {{list['empName']}}</option>
+          </select>
         </th>
+        <th scope="col">
+            <input type="date" id="startingDate" name="startingDate" class="form-control" [(ngModel)]="startingDate" placeholder="Starting Date"
+              value="">
+          </th>
         <th scope="col">
           <select class="form-control gendercontrol" name="assignedBy" id="assignedBy" [(ngModel)]="assignedBy">
-            <option [ngValue]="undefined" disabled selected>Assigned By</option>
-            <option *ngFor="let list of managerList" [ngValue]="list['empName']"> {{list['empName']}}</option>
+            <option [ngValue]="undefined" disabled selected>Project Status</option>
+            <option *ngFor="let list of projectStatusList" [ngValue]="list['value']"> {{list['key']}}</option>
           </select>
         </th>
-        <th scope="col">
-          <select class="form-control gendercontrol" name="assignedTo" id="assignedTo" [(ngModel)]="assignedTo">
-            <option [ngValue]="undefined" disabled selected>Assigned To</option>
-            <option *ngFor="let list of employeeList" [ngValue]="list['empName']"> {{list['empName']}}</option>
-          </select>
-        </th>
-        <th scope="col">
-          <input type="date" id="assignedDate" name="assignedDate" class="form-control" [(ngModel)]="assignedDate" placeholder="Assigned Date"
-            value="">
-        </th>
-        <!-- <th scope="col">MAIL(OFFICIAL)</th> -->
-        <!-- <th scope="col">CONTACT</th> -->
         <th class="align_center" scope="col">
           <button (click)="search()" href="javascript:void(0)" class="btn btn-default btntheme_search">Search</button>
         </th>
@@ -47,26 +39,24 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="col">Task ID</th>
+        <th scope="col">Project ID</th>
         <th scope="col">Project Title</th>
-        <th scope="col">Task Title</th>
-        <th scope="col">Assigned By</th>
-        <th scope="col">Assigned To</th>
-        <th scope="col">Assigned Date</th>
+        <th scope="col">Project Manager</th>
+        <th scope="col">Starting Date</th>
+        <th scope="col">Project Status</th>
         <th class="align_center" scope="col">ACTIONS</th>
       </tr>
-      <tr *ngFor="let task of taskList">
-        <td>{{task['taskId']}}</td>
-        <td>{{task['projectName']}}</td>
-        <td>{{task['taskTitle']}}</td>
-        <td>{{task['assignedBy']}}</td>
-        <td>{{task['assignedTo']}}</td>
-        <td>{{task['assignedDate']}}</td>
+      <tr *ngFor="let project of projectList">
+        <td>{{project['projectID']}}</td>
+        <td>{{project['projectName']}}</td>
+        <td>{{project['projectManager']}}</td>
+        <td>{{project['projectStartingDate']}}</td>
+        <td>{{project['project_status']}}</td>
         <td class="align_center">
           <div>
-            <i class="fa fa-eye m_r_5 float_none cursor" title="View Task" aria-hidden="true" (click)="viewTask(task)"></i>
-            <i class="fa fa-pencil m_r_5 float_none cursor" title="Assign Task" aria-hidden="true" (click)="assignTask(task)"></i>
-            <i class="fa fa-trash-o float_none cursor" title="Delete Task" aria-hidden="true" (click)="showConfirm(task)"></i>
+            <i class="fa fa-eye m_r_5 float_none cursor" title="View Project" aria-hidden="true" (click)="viewProject(project)"></i>
+            <i class="fa fa-pencil m_r_5 float_none cursor" title="Assign Project" aria-hidden="true" (click)="assignProject(project)"></i>
+            <i class="fa fa-trash-o float_none cursor" title="Delete Project" aria-hidden="true" (click)="showConfirm(project)"></i>
           </div>
         </td>
       </tr>
@@ -104,6 +94,4 @@
     </tfoot>
   </table>
 </div>
-<app-add-task *ngIf="isAddTask" [isselect]="isAddTask" (isselectChange)="isselectChange($event)"></app-add-task>
-<app-assign-task *ngIf="isAssignTask" [isselect]="isAssignTask" [selectedTask]="selectedTask" (isselectChange)="isselectAssignChange($event)"></app-assign-task>
-<app-view-task *ngIf="isViewTask" [isselect]="isViewTask" [selectedTask]="selectedTask" (isselectChange)="isselectViewChange($event)"></app-view-task>
+<app-view-project *ngIf="isViewProject" [isselect]="isViewProject" [selectedTask]="selectedTask" (isselectChange)="isselectViewChange($event)"></app-view-project>
