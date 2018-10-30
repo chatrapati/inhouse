@@ -97,6 +97,18 @@
               </div>
             </div>
           </div>
+          <div class="col-12 row ">
+              <div class="col-4 form-group">
+                <label for="workCompleted" class="control-label">Work Completed(in %)</label>
+              </div>
+              <div class="col-8 form-group">
+                <input type="text" id=workCompleted name="workCompleted" class="form-control col-6" maxlength=2 (keypress)="fieldValidate($event)" [(ngModel)]="project['workCompleted']"
+                  placeholder="Work completed in %" value="" #workCompleted="ngModel" required>
+                <div *ngIf="workCompleted.invalid && (workCompleted.dirty || workCompleted.touched||workCompleted.errors.maxlength)" class="alert alert-danger col-6">
+                  Enter Percent of work completed
+                </div>
+              </div>
+            </div>
         </div>
         <section>
           <div class="d-inline mx-auto center">

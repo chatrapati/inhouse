@@ -120,7 +120,8 @@ export const PROJECT_LIST:any=[
         projectVersion:1,
         project_status:'Development',
         projectStartingDate:'',
-        projectManager:'VIJAY'
+        projectManager:'VIJAY',
+        workCompleted:30
     },
     {
         projectID:'PRJ00125',
@@ -129,7 +130,8 @@ export const PROJECT_LIST:any=[
         projectVersion:1,
         project_status:'Completed',
         projectStartingDate:'',
-        projectManager:'ASHOK'
+        projectManager:'ASHOK',
+        workCompleted:100
     },
     {
         projectID:'PRJ00056',
@@ -138,7 +140,8 @@ export const PROJECT_LIST:any=[
         projectVersion:1,
         project_status:'Hold',
         projectStartingDate:'',
-        projectManager:'SANJAY'
+        projectManager:'SANJAY',
+        workCompleted:80
     },
     {
         projectID:'PRJ00057',
@@ -147,7 +150,8 @@ export const PROJECT_LIST:any=[
         projectVersion:2,
         project_status:'Development',
         projectStartingDate:'',
-        projectManager:'SANJAY'
+        projectManager:'SANJAY',
+        workCompleted:40
     }
 ]
 

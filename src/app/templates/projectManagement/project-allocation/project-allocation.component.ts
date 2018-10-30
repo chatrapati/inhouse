@@ -37,7 +37,13 @@ export class ProjectAllocationComponent implements OnInit {
     this.router.navigateByUrl('/projectAllotment');
   }
  
-
+  fieldValidate(event){
+    const pattern = /[0-9]/;
+    let inputChar = String.fromCharCode(event.charCode);
+    if (!pattern.test(inputChar)) {
+        event.preventDefault();
+    }
+}
 
   viewProject(task){
     console.log("task == >", task);

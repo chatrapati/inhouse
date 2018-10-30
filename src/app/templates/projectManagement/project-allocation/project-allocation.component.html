@@ -3,12 +3,13 @@
 </div>
 
 <div>
-  
+
   <table class="table table-striped m_b_15" id="projectTable">
     <thead>
       <tr>
         <th scope="col">
-          <input type="text" id="projectId" name="projectId" class="form-control" [(ngModel)]="projectId" placeholder="Project ID" value="">
+          <input type="text" id="projectId" name="projectId" class="form-control" [(ngModel)]="projectId" placeholder="Project ID"
+            value="">
         </th>
         <th scope="col">
           <select class="form-control gendercontrol" name="ProjectTitle" id="ProjectTitle" [(ngModel)]="ProjectTitle">
@@ -17,20 +18,24 @@
           </select>
         </th>
         <th scope="col">
-            <select class="form-control gendercontrol" name="projectManager" id="projectManager" [(ngModel)]="projectManager">
+          <select class="form-control gendercontrol" name="projectManager" id="projectManager" [(ngModel)]="projectManager">
             <option [ngValue]="undefined" disabled selected>Project Manager</option>
             <option *ngFor="let list of managerList" [ngValue]="list"> {{list['empName']}}</option>
           </select>
         </th>
         <th scope="col">
-            <input type="date" id="startingDate" name="startingDate" class="form-control" [(ngModel)]="startingDate" placeholder="Starting Date"
-              value="">
-          </th>
+          <input type="date" id="startingDate" name="startingDate" class="form-control" [(ngModel)]="startingDate" placeholder="Starting Date"
+            value="">
+        </th>
         <th scope="col">
           <select class="form-control gendercontrol" name="assignedBy" id="assignedBy" [(ngModel)]="assignedBy">
             <option [ngValue]="undefined" disabled selected>Project Status</option>
             <option *ngFor="let list of projectStatusList" [ngValue]="list['value']"> {{list['key']}}</option>
           </select>
+        </th>
+        <th scope="col">
+          <input type="text" id="workCompleted" name="workCompleted" class="form-control" maxlength=2 (keypress)="fieldValidate($event)" [(ngModel)]="workCompleted" placeholder="work completed in %"
+            value="">
         </th>
         <th class="align_center" scope="col">
           <button (click)="search()" href="javascript:void(0)" class="btn btn-default btntheme_search">Search</button>
@@ -44,6 +49,7 @@
         <th scope="col">Project Manager</th>
         <th scope="col">Starting Date</th>
         <th scope="col">Project Status</th>
+        <th scope="col">Work completed in %</th>
         <th class="align_center" scope="col">ACTIONS</th>
       </tr>
       <tr *ngFor="let project of projectList">
@@ -52,6 +58,7 @@
         <td>{{project['projectManager']}}</td>
         <td>{{project['projectStartingDate']}}</td>
         <td>{{project['project_status']}}</td>
+        <td style="text-align: center">{{project['workCompleted']}}</td>
         <td class="align_center">
           <div>
             <i class="fa fa-eye m_r_5 float_none cursor" title="View Project" aria-hidden="true" (click)="viewProject(project)"></i>

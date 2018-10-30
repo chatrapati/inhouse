@@ -9,6 +9,7 @@ export interface IProject {
     projectVersion ?: string,
     projectStartingDate ?: Date,
     projectEndDate ?: Date,
+    workCompleted ?: Number,
     projectTeam ?: any[]
  } 
  
@@ -27,6 +28,7 @@ export interface IProject {
      this.project.projectTeam=obj.projectTeam;
      this.project.projectStartingDate=obj.projectStartingDate;
      this.project.projectEndDate=obj.projectEndDate;
+     this.project.workCompleted=obj.workCompleted;
    }
  
    getEmployee(){
