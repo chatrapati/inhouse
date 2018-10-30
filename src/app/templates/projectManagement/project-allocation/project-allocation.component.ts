@@ -8,6 +8,7 @@ import { PROJECTMANAGERLIST, EMPLOYEELIST, PROJECT_LIST, TASK_LIST } from '../..
 })
 export class ProjectAllocationComponent implements OnInit {
 
+  isViewTask: boolean=false;
   selectedTask: any={};
   isAssignTask: boolean=false;
   isAddTask: boolean=false;
@@ -34,6 +35,12 @@ export class ProjectAllocationComponent implements OnInit {
     this.isAddTask=true;
   }
 
+  viewTask(task){
+    console.log("task == >", task);
+    this.isViewTask=true;
+    this.selectedTask=task;
+  }
+
   search(){
     console.log("in search");
     
@@ -45,6 +52,10 @@ export class ProjectAllocationComponent implements OnInit {
 
   isselectAssignChange(event){
     this.isAssignTask=event;
+  }
+
+  isselectViewChange(event){
+    this.isViewTask=event;
   }
 
 }

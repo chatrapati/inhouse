@@ -27,6 +27,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SelectTeamComponent } from './templates/projectManagement/select-team/select-team.component';
 import { AddTaskComponent } from './templates/projectManagement/add-task/add-task.component';
 import { AssignTaskComponent } from './templates/projectManagement/assign-task/assign-task.component';
+import { ViewTaskComponent } from './templates/projectManagement/view-task/view-task.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { AssignTaskComponent } from './templates/projectManagement/assign-task/a
     ProjectAllocationComponent,
     SelectTeamComponent,
     AddTaskComponent,
-    AssignTaskComponent
+    AssignTaskComponent,
+    ViewTaskComponent
   ],
   imports: [
     BrowserModule,
