@@ -36,8 +36,12 @@ export class RolesComponent implements OnInit {
   chartOptions = {
     responsive: true,    // THIS WILL MAKE THE CHART RESPONSIVE (VISIBLE IN ANY DEVICE).
     scales: {
+      xAxes: [{
+        barPercentage: 0.7
+      }],
       yAxes: [{
         ticks: {
+          min:0,
           steps: 10,
           stepValue: 10,
           max: 100,

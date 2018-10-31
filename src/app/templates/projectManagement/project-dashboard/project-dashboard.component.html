@@ -1,11 +1,8 @@
-<p>
-  project-dashboard works!
-</p>
 <div class="container-fulid">
   <div class="deptWrapper">
     
     <div class="card-columns custom-columns">
-      <div class="card bg-warning cursor" (click)="setGraph(label)" *ngFor="let project of projectList">
+      <div class="card bg-warning cursor" (click)="setGraph(project)" *ngFor="let project of projectList">
         <div class="card-body text-center">
           <div class="card-text">
             <h5>{{project['projectName']}}</h5>
@@ -13,5 +10,10 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class='row'>
+    <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="false"
+      [colors]="colors" class="col-8" (chartClick)="onChartClick($event)">
+    </canvas>
   </div>
   </div>
