@@ -200,7 +200,7 @@ border-radius: 0 !important;
   position: absolute;
   top: 0;
   right: 15px;
-  width: 283px;
+  width: 290px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -265,19 +265,30 @@ border-radius: 0 !important;
       padding-left: 220px;
   }
   #wrapper.toggled {
-      padding-left: 0;
+      padding-left: 25px;
+      padding-right: 5px;
   }
   #sidebar-wrapper {
       width: 250px;
+      overflow-y: overlay;
+  }
+  #wrapper.toggled #sidebar-wrapper #sidebarTogglebtn a{
+    padding-right: 10px!important;
+  }
+  #wrapper.toggled #sidebar-wrapper #sidbarLogo{
+    display: none;
   }
   #wrapper.toggled #sidebar-wrapper {
-      width: 40px;
+      width: 60px;
   }
   #wrapper.toggled #sidebar-wrapper span {
       visibility: hidden;
   }
   #wrapper.toggled #sidebar-wrapper i {
       float: right;
+  }
+  #wrapper.toggled #sidebar-wrapper img {
+    float: right;
   }
   #page-content-wrapper {
       padding: 20px;
@@ -503,12 +514,21 @@ border-radius: 0 !important;
   color: #020203;
 }
 
+#sidbarLogo a{
+ text-align: center!important;
+}
+
 #sidbarLogo a:hover {
   background: transparent !important;
 }
 
 #sidebarTogglebtn a:hover {
   background: transparent !important;
+  color: #f58736 !important;
+}
+
+img:hover{
+  color: #f58736 !important;
 }
 
 .fa-bars:hover {
@@ -521,12 +541,23 @@ border-radius: 0 !important;
 
 #products li a:hover {
   background: transparent !important;
-  border-bottom: 1.6px solid #020203;
+  /* text-decoration: underline;
+  text-decoration-color: #f58736; */
+  /* border-bottom: 1.6px solid #f58736; */
 }
 
 #products li a {
-  color: #f58736 !important;
+  color: #020203 !important;
   font-size: .8rem !important;
+  padding-left: 23px!important;
+}
+
+#products li a u:hover {
+ border-bottom: 2px solid #f58736;
+}
+
+#products li a u {
+ text-decoration: none;
 }
 
 #products li {
@@ -550,12 +581,20 @@ border-radius: 0 !important;
 
 #projects li a:hover {
   background: transparent !important;
-  border-bottom: 1.6px solid #020203;
 }
 
 #projects li a {
-  color: #f58736 !important;
+  color: #020203 !important;
   font-size: .8rem !important;
+  padding-left: 23px !important;
+}
+
+#projects li a u:hover {
+  border-bottom: 2px solid #f58736;
+}
+ 
+#projects li a u {
+  text-decoration: none;
 }
 
 #projects li {
