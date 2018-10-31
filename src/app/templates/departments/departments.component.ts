@@ -74,6 +74,8 @@ export class DepartmentsComponent implements OnInit {
   }
 
   setLabel() {
+    this.chartData=[];
+    this.labels=[];
     console.log("innnnn");
     let data: any = [];
     // let keys:any=[];

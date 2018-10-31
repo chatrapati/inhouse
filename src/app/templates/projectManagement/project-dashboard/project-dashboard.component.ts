@@ -50,6 +50,8 @@ export class ProjectDashboardComponent implements OnInit {
   }
 
   getData() {
+    this.chartData = [];
+    this.labels=[];
     let data: any = [];
     for (let project of this.projectList) {
       this.labels.push(project['projectName']);

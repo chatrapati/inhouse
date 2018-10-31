@@ -60,12 +60,16 @@ export class AdmindashboardComponent implements OnInit {
 
   ngOnInit() {
     this.daysArr = this.createCalendar(this.date);
+    this.getData();
+  }
+
+  getData(){
     this.chartData= [
-        {
-          label: 'Employees',
-          data: [this.pageData['totalEmployees'], this.pageData['appointedEmployees'], this.pageData['releivingEmployees'], this.pageData['firedEmployees']]
-        }
-      ];
+      {
+        label: 'Employees',
+        data: [this.pageData['totalEmployees'], this.pageData['appointedEmployees'], this.pageData['releivingEmployees'], this.pageData['firedEmployees']]
+      }
+    ];
   }
 
   setGraph(key){

@@ -21,7 +21,6 @@
           </div>
 
         </div>
-        <div class="hero2"></div>
       </a>
 
     </div>
@@ -44,7 +43,6 @@
           </div>
 
         </div>
-        <div class="hero2"></div>
       </a>
 
     </div>
@@ -67,7 +65,6 @@
           </div>
 
         </div>
-        <div class="hero2"></div>
       </a>
 
     </div>
@@ -90,10 +87,12 @@
           </div>
 
         </div>
-        <div class="hero2"></div>
       </a>
 
     </div>
+  </div>
+  <div class="d-inline mx-auto right">
+    <button class="btn btn-default btntheme_search" href="javascript:void(0)" (click)="getData()">Reset Chart</button>
   </div>
   <div class="row" *ngIf="!isEmployeeList">
     <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="false"

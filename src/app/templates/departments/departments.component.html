@@ -22,6 +22,9 @@
       </div>
     </div>
   </div>
+  <div class="d-inline mx-auto right">
+    <button class="btn btn-default btntheme_search" href="javascript:void(0)" (click)="setLabel()">Reset Chart</button>
+  </div>
   <div class="row">
     <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="false"
       [colors]="colors" class="col-8" (chartClick)="onChartClick($event)">

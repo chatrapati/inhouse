@@ -11,9 +11,19 @@
       </div>
     </div>
   </div>
+  <div class="d-inline mx-auto right">
+      <button class="btn btn-default btntheme_search" href="javascript:void(0)" (click)="getData()">Reset Chart</button>
+    </div>
   <div class='row'>
     <canvas baseChart [chartType]="'bar'" [datasets]="chartData" [labels]="labels" [options]="chartOptions" [legend]="false"
       [colors]="colors" class="col-8" (chartClick)="onChartClick($event)">
     </canvas>
+    <div class="col-4" style="padding-top: 20px; ">
+      <h5 style="text-align: center">Work completed in %</h5>
+      <div class="col-12 row justify-content-md-center" style="margin-bottom:5px; " id="workPercent" *ngFor="let project of projectList">
+        <div class="col-6"><i class="fa fa-square" aria-hidden="true"></i> {{project['projectName']}}</div>:
+        <div class="col-2">{{project['workCompleted']}}</div>%
+      </div>
+    </div>
   </div>
   </div>

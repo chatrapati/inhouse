@@ -87,6 +87,9 @@ export class RolesComponent implements OnInit {
   }
 
   setLabel() {
+    this.chartData=[];
+    this.headings=[];
+    this.labels=[];
     let list: any = [];
     let data: any = [];
     for (let [key, value] of Object.entries(this.pageData)) {
