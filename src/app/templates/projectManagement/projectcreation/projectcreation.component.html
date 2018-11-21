@@ -8,7 +8,7 @@
       <form #projectCreation="ngForm">
         <div class="row inputbox">
           <div class="col-4">
-            <label for="projectID" class="control-label">Project ID</label>
+            <label for="projectID" class="control-label">Project ID <sup class="astrick">*</sup></label>
             <input type="text" id="projectID" name="projectID" class="form-control" [(ngModel)]="project['projectID']" placeholder="Project ID"
               value="" #projectID="ngModel" required>
             <div *ngIf="projectID.invalid && (projectID.dirty || projectID.touched)" class="alert alert-danger">
@@ -17,7 +17,7 @@
           </div>
           <div class="col-4">
             <div class="form-group ">
-              <label for="projectName" class="control-label">Project Name</label>
+              <label for="projectName" class="control-label">Project Name <sup class="astrick">*</sup></label>
               <input type="text" id="projectName" name="projectName" class="form-control" [(ngModel)]="project['projectName']" placeholder="Project Name"
                 value="" #projectName="ngModel" required>
               <div *ngIf="projectName.invalid && (projectName.dirty || projectName.touched)" class="alert alert-danger">
@@ -27,7 +27,7 @@
           </div>
           <div class="col-4">
             <div class="form-group ">
-              <label for="projectFullName" class="control-label">Project FullName</label>
+              <label for="projectFullName" class="control-label">Project FullName <sup class="astrick">*</sup></label>
               <input type="text" id=projectFullName name="projectFullName" class="form-control" [(ngModel)]="project['FullName']" placeholder="Project FullName"
                 value="" #projectFullName="ngModel" required>
               <div *ngIf="projectFullName.invalid && (projectFullName.dirty || projectFullName.touched)" class="alert alert-danger">
@@ -37,7 +37,7 @@
           </div>
           <div class="col-4">
             <div class="form-group ">
-              <label for="projectStatus" class="control-label">Project Status</label>
+              <label for="projectStatus" class="control-label">Project Status <sup class="astrick">*</sup></label>
               <select class="form-control gendercontrol" name="projectStatus" id="projectStatus" [(ngModel)]="project['project_status']"
                 #projectStatus="ngModel" required>
                 <option [ngValue]="undefined" disabled selected>Select Project Status</option>
@@ -50,7 +50,7 @@
           </div>
           <div class="col-4">
             <div class="form-group ">
-              <label for="projectStartingDate" class="control-label">Project Starting Date</label>
+              <label for="projectStartingDate" class="control-label">Project Starting Date <sup class="astrick">*</sup></label>
               <input type="date" id=projectStartingDate name="projectStartingDate" class="form-control" [(ngModel)]="project['projectStartingDate']"
                 placeholder="Project Starting Date" value="" #projectStartingDate="ngModel" required>
               <div *ngIf="projectStartingDate.invalid && (projectStartingDate.dirty || projectStartingDate.touched)" class="alert alert-danger">

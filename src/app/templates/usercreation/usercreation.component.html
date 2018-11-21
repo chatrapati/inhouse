@@ -24,7 +24,7 @@
           <div class="row inputbox">
             <div class="col-4">
               <div class="form-group">
-                <label for="empId" class="control-label">Employee ID</label>
+                <label for="empId" class="control-label">Employee ID <sup class="astrick">*</sup></label>
                 <input type="text" id="empId" name="empId" class="form-control" [(ngModel)]="user['empId']" placeholder="Employee ID" value=""
                   #empId="ngModel" required>
                 <div *ngIf="empId.invalid && (empId.dirty || empId.touched)" class="alert alert-danger">
@@ -34,7 +34,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="empName" class="control-label">Employee Name</label>
+                <label for="empName" class="control-label">Employee Name <sup class="astrick">*</sup></label>
                 <input type="text" id="empName" name="empName" class="form-control" [(ngModel)]="user['empName']" placeholder="Employee Name"
                   value="" #empName="ngModel" required>
                 <div *ngIf="empName.invalid && (empName.dirty || empName.touched)" class="alert alert-danger">
@@ -44,7 +44,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="surname" class="control-label">Employee Surname</label>
+                <label for="surname" class="control-label">Employee Surname <sup class="astrick">*</sup></label>
                 <input type="text" id=surname name="surname" class="form-control" [(ngModel)]="user['surname']" placeholder="Employee Surname"
                   value="" #surname="ngModel" required>
                 <div *ngIf="surname.invalid && (surname.dirty || surname.touched)" class="alert alert-danger">
@@ -54,7 +54,7 @@
             </div>
             <div class="col-4">
               <div class="form-group">
-                <label for="gender" class="control-label">Gender</label>
+                <label for="gender" class="control-label">Gender <sup class="astrick">*</sup></label>
                 <select class="form-control gendercontrol" name="gender" id="gender" [(ngModel)]="user['gender']" #gender="ngModel" required>
                   <option [ngValue]="undefined" disabled selected>Select</option>
                   <option *ngFor="let list of genderList" [ngValue]="list['value']"> {{list['key']}}</option>
@@ -66,7 +66,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="dob" class="control-label">Date of Birth(as per records)</label>
+                <label for="dob" class="control-label">Date of Birth<sup class="astrick">*</sup> (as per records)</label>
                 <input type="date" id="dob" name="dob" class="form-control" [(ngModel)]="user['dob']" placeholder="Date of Birth" value=""
                   #dob="ngModel" required>
                 <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="alert alert-danger">
@@ -76,7 +76,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="birthDate" class="control-label">Birth Date(Actual Date)</label>
+                <label for="birthDate" class="control-label">Birth Date<sup class="astrick">*</sup> (Actual Date)</label>
                 <input type="date" id="birthDate" name="birthDate" class="form-control" [(ngModel)]="user['birthDate']" placeholder="Birth Date"
                   value="" #birthDate="ngModel" required>
                   <div *ngIf="birthDate.invalid && (birthDate.dirty || birthDate.touched)" class="alert alert-danger">
@@ -93,7 +93,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="martialStatus" class="control-label">Martial status</label>
+                <label for="martialStatus" class="control-label">Martial status <sup class="astrick">*</sup></label>
                 <select class="form-control gendercontrol" name="martialStatus" id="martialStatus" [(ngModel)]="user['martialStatus']" #martialStatus="ngModel"
                   required>
                   <option [ngValue]="undefined" disabled selected>Select Martial Status</option>
@@ -106,7 +106,7 @@
             </div>
             <div class="col-4">
               <div class="form-group">
-                <label for="qualification" class="control-label">Qualification</label>
+                <label for="qualification" class="control-label">Qualification <sup class="astrick">*</sup></label>
                 <select class="form-control gendercontrol" name="qualification" id="qualification" [(ngModel)]="user['qualification']" #qualification="ngModel"
                   required>
                   <option [ngValue]="undefined" disabled selected>Select Qualification</option>
@@ -119,7 +119,7 @@
             </div>
             <div class="col-4">
               <div class="form-group">
-                <label for="presentAddress" class="control-label">Present Address</label>
+                <label for="presentAddress" class="control-label">Present Address <sup class="astrick">*</sup></label>
                 <input type="text" id="presentAddress" name="presentAddress" class="form-control" [(ngModel)]="user['presentAddress']" placeholder="Present Address"
                   value="" #presentAddress="ngModel" required>
                 <div *ngIf="presentAddress.invalid && (presentAddress.dirty || presentAddress.touched)" class="alert alert-danger">
@@ -129,7 +129,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="permanentAddress" class="control-label">Permanent Address</label>
+                <label for="permanentAddress" class="control-label">Permanent Address <sup class="astrick">*</sup></label>
                 <input type="text" id="permanentAddress" name="permanentAddress" class="form-control" [(ngModel)]="user['permanentAddress']"
                   placeholder="Permanent Address" value="" #permanentAddress="ngModel" required>
                   <div *ngIf="permanentAddress.invalid && (permanentAddress.dirty || permanentAddress.touched)" class="alert alert-danger">
@@ -146,7 +146,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="contact" class="control-label">Contact</label>
+                <label for="contact" class="control-label">Contact <sup class="astrick">*</sup></label>
                 <input type="text" id="contact" name="contact" class="form-control" minlength=10 maxlength=10  (keypress)="fieldValidate($event,'contact')" [(ngModel)]="user['contact']" placeholder="Contact" value=""
                   #contact="ngModel" required>
                 <div *ngIf="contact.invalid && (contact.dirty || contact.touched || contact.errors.minlength)" class="alert alert-danger">
@@ -156,7 +156,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="econtact" class="control-label">Emergency Contact</label>
+                <label for="econtact" class="control-label">Emergency Contact <sup class="astrick">*</sup></label>
                 <input type="text" id="econtact" name="econtact" class="form-control" minlength=10 maxlength=10 (keypress)="fieldValidate($event,'contact')" [(ngModel)]="user['econtact']" placeholder="Emergency Contact"
                   value="" #econtact="ngModel" required>
                 <div *ngIf="econtact.invalid && (econtact.dirty || econtact.touched || econtact.errors.minlength)" class="alert alert-danger">
@@ -166,7 +166,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="mail" class="control-label">Email id Personal</label>
+                <label for="mail" class="control-label">Email id Personal <sup class="astrick">*</sup></label>
                 <input type="text" id="mail" name="mail" class="form-control" [(ngModel)]="user['mail']" placeholder="Email-ID Personal"
                   value="" #mail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
                 <div *ngIf="mail.invalid && (mail.dirty || mail.touched || mail.errors.pattern)" class="alert alert-danger">
@@ -191,7 +191,7 @@
           <div class="row inputbox">
             <div class="col-4">
               <div class="form-group ">
-                <label for="dojGST" class="control-label">Date of Joining GST</label>
+                <label for="dojGST" class="control-label">Date of Joining GST <sup class="astrick">*</sup></label>
                 <input type="date" name="dojGST" id="dojGST" [(ngModel)]="user['dojGST']" class="form-control" placeholder="Date of Joining GST"
                   value="" #dojGST="ngModel" required>
                 <div *ngIf="dojGST.invalid && (dojGST.dirty || dojGST.touched)" class="alert alert-danger">
@@ -201,7 +201,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="docGST" class="control-label">Date of Confirmation GST</label>
+                <label for="docGST" class="control-label">Date of Confirmation GST <sup class="astrick">*</sup></label>
                 <input type="date" name="docGST" id="docGST" [(ngModel)]="user['docGST']" class="form-control" placeholder="Date of Confirmation GST"
                   value="" #docGST="ngModel" required>
                 <div *ngIf="docGST.invalid && (docGST.dirty || docGST.touched)" class="alert alert-danger">
@@ -211,7 +211,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="designation" class="control-label">Designation</label>
+                <label for="designation" class="control-label">Designation <sup class="astrick">*</sup></label>
                 <select class="form-control gendercontrol" name="designation" id="designation" [(ngModel)]="user['designation']" #designation="ngModel"
                   required>
                   <option [ngValue]="undefined" disabled selected>Select Designation</option>
@@ -224,7 +224,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="department" class="control-label">Department</label>
+                <label for="department" class="control-label">Department <sup class="astrick">*</sup></label>
                 <select class="form-control gendercontrol" name="department" id="department" [(ngModel)]="user['department']" #department="ngModel"
                   required>
                   <option [ngValue]="undefined" disabled selected>Select Department</option>
@@ -237,7 +237,7 @@
             </div>
             <div class="col-4">
               <div class="form-group">
-                <label for="emailOfficial" class="control-label">Email-ID Official</label>
+                <label for="emailOfficial" class="control-label">Email-ID Official <sup class="astrick">*</sup></label>
                 <input type="text" name="emailOfficial" id="emailOfficial" [(ngModel)]="user['emailOfficial']" class="form-control" placeholder="Email-ID Official"
                   value="" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #emailOfficial="ngModel" required>
                 <div *ngIf="emailOfficial.invalid && (emailOfficial.dirty || emailOfficial.touched || emailOfficial.errors.pattern)" class="alert alert-danger">
@@ -247,7 +247,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="ctc" class="control-label">CTC</label>
+                <label for="ctc" class="control-label">CTC <sup class="astrick">*</sup></label>
                 <input type="text" name="ctc" id="ctc" [(ngModel)]="user['ctc']" class="form-control" placeholder="CTC" value="" #ctc="ngModel" minlength=4 maxlength=8  (keypress)="fieldValidate($event,'ctc')"
                   required>
                 <div *ngIf="ctc.invalid && (ctc.dirty || ctc.touched || ctc.errors.minlength)" class="alert alert-danger">
@@ -257,7 +257,7 @@
             </div>
             <div class="col-4">
               <div class="form-group ">
-                <label for="reportingManager" class="control-label">Reporting Manager</label>
+                <label for="reportingManager" class="control-label">Reporting Manager <sup class="astrick">*</sup></label>
                 <input type="text" name="reportingManager" id="reportingManager" [(ngModel)]="user['reportingManager']" class="form-control"
                   placeholder="Reporting Manager" value="" #reportingManager="ngModel" required>
                 <div *ngIf="reportingManager.invalid && (reportingManager.dirty || reportingManager.touched)" class="alert alert-danger">
@@ -288,7 +288,7 @@
           </div>
           <div class="col-4">
             <div class="form-group ">
-              <label for="pan" class="control-label">Pancard</label>
+              <label for="pan" class="control-label">Pancard <sup class="astrick">*</sup></label>
               <input type="text" name="pan" id="pan" [(ngModel)]="user['pan']" class="form-control" placeholder="Pancard" value="" minlength=10 maxlength=10 pattern="[A-Za-z]{5}\d{4}[A-Za-z]{1}" #pan="ngModel">
               <div *ngIf="pan.invalid && (pan.dirty || pan.touched || pan.errors.pattern || pan.errors.minlength)" class="alert alert-danger">
                   Enter valid PAN
@@ -297,7 +297,7 @@
           </div>
           <div class="col-4">
             <div class="form-group ">
-              <label for="aadhar" class="control-label">Aadhar Number</label>
+              <label for="aadhar" class="control-label">Aadhar Number <sup class="astrick">*</sup></label>
               <input type="text" name="aadhar" id="aadhar" [(ngModel)]="user['aadhar']" class="form-control" placeholder="Aadhar Number" value="" minlength=12 maxlength=12 pattern="^[0-9]{12}$" (keypress)="fieldValidate($event,'aadhar')" #aadhar="ngModel">
               <div *ngIf="aadhar.invalid && (aadhar.dirty || aadhar.touched || aadhar.errors.pattern || aadhar.errors.minlength)" class="alert alert-danger">
                   Enter valid AADHAR
@@ -330,7 +330,7 @@
           </div>
           <div class="col-4">
             <div class="form-group ">
-              <label for="UAN" class="control-label">UAN (PF)</label>
+              <label for="UAN" class="control-label">UAN <sup class="astrick">*</sup> (PF)</label>
               <input type="text" name="UAN" id="UAN" [(ngModel)]="user['UAN']" class="form-control" placeholder="UAN (PF)" value="" minlength=12 maxlength=12 pattern="^[0-9]{12}$" (keypress)="fieldValidate($event,'aadhar')" #UAN="ngModel">
               <div *ngIf="UAN.invalid && (UAN.dirty || UAN.touched || UAN.errors.pattern || UAN.errors.minlength)" class="alert alert-danger">
                   Enter valid UAN

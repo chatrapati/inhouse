@@ -687,3 +687,8 @@ textarea{
   border:1px solid #eb8035 !important; 
   border-radius: 5px !important;
 }
+
+.astrick {
+  color: red;
+  font-size: 1rem !important;
+}
